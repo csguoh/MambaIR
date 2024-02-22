@@ -140,7 +140,10 @@ pip install mamba_ssm==1.0.1
 1. Please download the corresponding training datasets and put them in the folder datasets/DF2K. Download the testing datasets and put them in the folder datasets/SR.
 
 2. Follow the instructions below to begin training our model.
-3. 
+
+3.
+
+```
 # Claissc SR task, cropped input=64×64, 8 GPUs, batch size=4 per GPU
 python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_SR_x2.yml --launcher pytorch
 python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_SR_x3.yml --launcher pytorch
@@ -150,13 +153,25 @@ python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr
 python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x2.yml --launcher pytorch
 python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x3.yml --launcher pytorch
 python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x4.yml --launcher pytorch
-
+```
 
 3. Run the script then you can find the generated experimental logs in the folder experiments.
 
 ### Train on Real Denoising
 
-
+1. Please download the corresponding training datasets and put them in the folder datasets/SIDD. Note that we provide both training and validating files, which are already processed.
+2. Go to folder 'realDenoising'. Follow the instructions below to train our ART model.
+# go to the folder
+cd realDenoising
+# set the new environment (BasicSRv1.2.0), which is the same with Restormer for training.
+python setup.py develop --no_cuda_extgf
+# train ART for RealDN task, 8 GPUs
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=2414 basicsr/train.py -opt options/train_ART_RealDN.yml --launcher pytorch
+Run the script then you can find the generated experimental logs in the folder realDenoising/experiments.
+Remember to go back to the original environment if you finish all the training or testing about real image denoising task. This is a friendly hint in order to prevent confusion in the training environment.
+# Tips here. Go back to the original environment (BasicSRv1.3.5) after finishing all the training or testing about real image denoising. 
+cd ..
+python setup.py develop
 
 
 ## <a name="testing"></a> Testing
