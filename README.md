@@ -127,8 +127,19 @@ We achieve state-of-the-art adaptation performance on various downstream image r
 
 ## <a name="installation"></a> Installation
 
+This codebase was tested with the following environment configurations. It may work with other versions.
 
+- Ubuntu 20.04
+- CUDA 11.7
+- Python 3.9
+- PyTorch 1.13.1 + cu117
 
+To use the selective scan with efficient hard-ware design, the `mamba_ssm` library is advised to install with the folllowing command.
+
+```
+pip install causal_conv1d==1.0.0
+pip install mamba_ssm==1.0.1
+```
 
 ## <a name="model_summary"></a> Model Summary
 
@@ -154,7 +165,7 @@ This project is released under the [Apache 2.0 license](LICENSE).
 
 ## Acknowledgement
 
-This code is based on [BasicSR](https://github.com/XPixelGroup/BasicSR). Thanks for their awesome work.
+This code is based on [BasicSR](https://github.com/XPixelGroup/BasicSR) and [VMamba](https://github.com/MzeroMiko/VMamba). Thanks for their awesome work.
 
 ## Contact
 
