@@ -161,17 +161,23 @@ python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr
 
 1. Please download the corresponding training datasets and put them in the folder datasets/SIDD. Note that we provide both training and validating files, which are already processed.
 2. Go to folder 'realDenoising'. Follow the instructions below to train our ART model.
+
+``` 
 # go to the folder
 cd realDenoising
 # set the new environment (BasicSRv1.2.0), which is the same with Restormer for training.
 python setup.py develop --no_cuda_extgf
-# train ART for RealDN task, 8 GPUs
-python -m torch.distributed.launch --nproc_per_node=8 --master_port=2414 basicsr/train.py -opt options/train_ART_RealDN.yml --launcher pytorch
+# train for RealDN task, 8 GPUs
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=2414 basicsr/train.py -opt options/train_MambaIR_RealDN.yml --launcher pytorch
 Run the script then you can find the generated experimental logs in the folder realDenoising/experiments.
+```
+
 Remember to go back to the original environment if you finish all the training or testing about real image denoising task. This is a friendly hint in order to prevent confusion in the training environment.
+```
 # Tips here. Go back to the original environment (BasicSRv1.3.5) after finishing all the training or testing about real image denoising. 
 cd ..
 python setup.py develop
+```
 
 
 ## <a name="testing"></a> Testing
@@ -196,7 +202,7 @@ This project is released under the [Apache 2.0 license](LICENSE).
 
 ## Acknowledgement
 
-This code is based on [BasicSR](https://github.com/XPixelGroup/BasicSR) and [VMamba](https://github.com/MzeroMiko/VMamba). Thanks for their awesome work.
+This code is based on [BasicSR](https://github.com/XPixelGroup/BasicSR), ART(https://github.com/gladzhang/ART) ,and [VMamba](https://github.com/MzeroMiko/VMamba). Thanks for their awesome work.
 
 ## Contact
 
