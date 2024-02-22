@@ -61,8 +61,15 @@
 
 ## <a name="model_summary"></a> Model Summary
 
-
-
+| Model          | Task                 | Test_dataset | PSNR | SSIM | ckpt_link | log_file |
+| -------------- | -------------------- | ------------ | ---- | ---- | --------- | -------- |
+| MambaIR_SR2    | Classic SR x2        | Urban100     |      |      | link      | link     |
+| MambaIR_SR3    | Classic SR x3        | Urban100     |      |      | link      | link     |
+| MambaIR_SR4    | Classic SR x4        | Urban100     |      |      | link      | link     |
+| MambaIR_light2 | Lightweight SR x2    | Urban100     |      |      | link      | link     |
+| MambaIR_light3 | Lightweight SR x3    | Urban100     |      |      | link      | link     |
+| MambaIR_light4 | Lightweight SR x4    | Urban100     |      |      | link      | link     |
+| MambaIR_realDN | Real image Denoising | SIDD         |      |      | link      | link     |
 
 
 ## <a name="results"></a> 🥇 Results
