@@ -74,15 +74,7 @@
 
 ## <a name="results"></a> 🥇 Results
 
-We achieve state-of-the-art adaptation performance on various downstream image restoration tasks. Detailed results can be found in the paper.
-
-<details>
-<summary>Evaluation on Second-order Degradation (LR4&Noise30) (click to expand)</summary>
-
-<p align="center">
-  <img width="900" src="assets/SR&DN.png">
-</p>
-</details>
+We achieve state-of-the-art performance on various image restoration tasks. Detailed results can be found in the paper.
 
 
 <details>
@@ -94,39 +86,31 @@ We achieve state-of-the-art adaptation performance on various downstream image r
 </details>
 
 
+
 <details>
-<summary>Evaluation on Denoise&DerainL (click to expand)</summary>
+<summary>Evaluation on Lightweight SR (click to expand)</summary>
 
 <p align="center">
-  <img width="500" src="assets/Dn&DRL.png">
+  <img width="500" src="assets/light-sr.png">
 </p>
 </details>
 
 
 <details>
-<summary>Evaluation on Heavy Rain Streak Removal (click to expand)</summary>
+<summary>Evaluation on Real Image Denoising (click to expand)</summary>
 
 <p align="center">
-  <img width="500" src="assets/DRH.png">
-</p>
-</details>
-
-
-<details>
-<summary>Evaluation on Low-light Image Enhancement (click to expand)</summary>
-
-<p align="center">
-  <img width="500" src="assets/low-light.png">
+  <img width="500" src="assets/real-dn.png">
 </p>
 
 </details>
 
 
 <details>
-<summary>Evaluation on Model Scalability (click to expand)</summary>
+<summary>Evaluation on Effective Receptive Filed (click to expand)</summary>
 
 <p align="center">
-  <img width="600" src="assets/scalabiltity.png">
+  <img width="600" src="assets/erf.png">
 </p>
 
 </details>
@@ -148,14 +132,39 @@ pip install causal_conv1d==1.0.0
 pip install mamba_ssm==1.0.1
 ```
 
-## <a name="model_summary"></a> Model Summary
+
+## <a name="training"></a> Training
+
+### Train on SR
+
+1. Please download the corresponding training datasets and put them in the folder datasets/DF2K. Download the testing datasets and put them in the folder datasets/SR.
+
+2. Follow the instructions below to begin training our model.
+3. 
+# Claissc SR task, cropped input=64×64, 8 GPUs, batch size=4 per GPU
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_SR_x2.yml --launcher pytorch
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_SR_x3.yml --launcher pytorch
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_SR_x4.yml --launcher pytorch
+
+# Lightweight SR task, cropped input=64×64, 8 GPUs, batch size=8 per GPU
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x2.yml --launcher pytorch
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x3.yml --launcher pytorch
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x4.yml --launcher pytorch
+
+
+3. Run the script then you can find the generated experimental logs in the folder experiments.
+
+### Train on Real Denoising
 
 
 
-
-## <a name="training"></a> Traning
 
 ## <a name="testing"></a> Testing
+
+### Test on SR
+
+
+### Test on Real Denoising
 
 
 ## <a name="cite"></a> 🥰 Citation
