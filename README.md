@@ -4,11 +4,12 @@
 
 ## MambaIR: A Simple Baseline for Image Restoration with State-Space Model
 
-[[Paper](https://arxiv.org/pdf/2312.08881.pdf)]  [[Suppl]()] [Project Page][Zhihu(知乎)]
+[[Paper](https://arxiv.org/pdf/2312.08881.pdf)] [Zhihu(知乎)]
 
 
-[Hang Guo](https://github.com/csguoh), Jinmin Li, [Tao Dai](https://cstaodai.com/), Zhihao Ouyang, Xudong Ren, [Shu-Tao Xia](https://scholar.google.com/citations?hl=zh-CN&user=koAXTXgAAAAJ)
+[Hang Guo](https://github.com/csguoh)\*, Jinmin Li\*, [Tao Dai](https://cstaodai.com/), Zhihao Ouyang, Xudong Ren, and [Shu-Tao Xia](https://scholar.google.com/citations?hl=zh-CN&user=koAXTXgAAAAJ)
 
+(\*) equal contribution
 
 > **Abstract:**  Recent years have witnessed great progress in image restoration thanks to the advancements in modern deep neural networks \textit{e.g.} Convolutional Neural Network and Transformer. However, existing restoration backbones are usually limited due to the inherent local reductive bias or quadratic computational complexity. Recently, Selective Structured State Space Model \textit{e.g.}, Mamba, have shown great potential for long-range dependencies modeling with linear complexity, but it is still under-explored in low-level computer vision. In this work, we introduce a simple but strong benchmark model, named MambaIR, for image restoration. In detail, we propose the Residual State Space Block as the core component, which employs convolution and channel attention to enhance capabilities of the vanilla Mamba. In this way, our MambaIR takes advantages of local patch recurrence prior as well as channel interaction to produce restoration-specific feature representation. Extensive experiments demonstrate the superiority of our method, for example, MambaIR outperforms Transformer-based baseline SwinIR by up to 0.36dB, using similar computational cost but with global receptive field. 
 
@@ -26,14 +27,16 @@
 - [Visual Results](#visual_results)
 - [News](#news)
 - [TODO](#todo)
+- [Model Summary](#model_summary)
 - [Results](#results)
+- [Installation](#installation)
+- [Training](#training)
+- [Testing](#testing)
 - [Citation](#cite)
 
 
-## <a name="visual_results"></a>:eyes:Visual Results On Different Restoration Tasks
-[<img src="assets/imgsli1.png" height="153"/>](https://imgsli.com/MjI1Njk3) [<img src="assets/imgsli7.png" height="153"/>](https://imgsli.com/MjI1NzIx) [<img src="assets/imgsli5.png" height="153"/>](https://imgsli.com/MjI1NzEx) [<img src="assets/imgsli2.png" height="153"/>](https://imgsli.com/MjI1NzAw)
+## <a name="visual_results"></a>:eyes:Visual Results On Classic Image SR
 
-[<img src="assets/imgsli4.png" height="150"/>](https://imgsli.com/MjI1NzAz) [<img src="assets/imgsli3.png" height="150"/>](https://imgsli.com/MjI1NzAx) [<img src="assets/imgsli6.png" height="150"/>](https://imgsli.com/MjI1NzE2)
 
 
 
@@ -47,12 +50,20 @@
 
 ## <a name="todo"></a> ☑️ TODO
 
-- [ ] Build the repo
-- [x] arXiv version
+- [x] Build the repo
+- [ ] arXiv version
 - [ ] Release code
 - [ ] Pretrained weights
+- [ ] Real-world SR
+- [ ] JPEG Compression Artifact Redection
 - [ ] More Tasks
  
+
+## <a name="model_summary"></a> Model Summary
+
+
+
+
 
 ## <a name="results"></a> 🥇 Results
 
@@ -114,6 +125,19 @@ We achieve state-of-the-art adaptation performance on various downstream image r
 </details>
 
 
+## <a name="installation"></a> Installation
+
+
+
+
+## <a name="model_summary"></a> Model Summary
+
+
+
+
+## <a name="training"></a> Traning
+
+## <a name="testing"></a> Testing
 
 
 ## <a name="cite"></a> 🥰 Citation
