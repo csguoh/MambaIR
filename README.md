@@ -91,7 +91,7 @@ We achieve state-of-the-art performance on various image restoration tasks. Deta
 <summary>Evaluation on Lightweight SR (click to expand)</summary>
 
 <p align="center">
-  <img width="500" src="assets/light-sr.png">
+  <img width="500" src="assets/lightSR.png">
 </p>
 </details>
 
