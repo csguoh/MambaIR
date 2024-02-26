@@ -61,7 +61,7 @@
 - [ ] More Tasks
  
 
-## <a name="model_summary"></a> Model Summary
+## <a name="model_summary"></a> :page_with_curl: Model Summary
 
 | Model          | Task                 | Test_dataset | PSNR | SSIM | ckpt_link | log_file |
 | -------------- | -------------------- | ------------ | ---- | ---- | --------- | -------- |
@@ -118,7 +118,7 @@ We achieve state-of-the-art performance on various image restoration tasks. Deta
 </details>
 
 
-## <a name="installation"></a> Installation
+## <a name="installation"></a> :wrench: Installation
 
 This codebase was tested with the following environment configurations. It may work with other versions.
 
@@ -135,7 +135,7 @@ pip install mamba_ssm==1.0.1
 ```
 
 
-## <a name="training"></a> Training
+## <a name="training"></a>  :hourglass: Training
 
 ### Train on SR
 
@@ -182,7 +182,7 @@ python setup.py develop
 ```
 
 
-## <a name="testing"></a> Testing
+## <a name="testing"></a> :smile: Testing
 
 ### Test on SR
 
