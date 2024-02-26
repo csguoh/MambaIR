@@ -37,13 +37,15 @@
 
 ## <a name="visual_results"></a>:eyes:Visual Results On Classic Image SR
 
-
+<p align="center">
+  <img width="800" src="assets/visual.png">
+</p>
 
 
 ## <a name="news"></a> 🆕 News
 
-- **2024-2-23:** This repo is released.
-- **2024-2-23:** arXiv paper available.
+- **2024-2-27:** This repo is released.
+- **2024-2-27:** arXiv paper available.
 
 
 
@@ -51,7 +53,7 @@
 ## <a name="todo"></a> ☑️ TODO
 
 - [x] Build the repo
-- [ ] arXiv version
+- [x] arXiv version
 - [ ] Release code
 - [ ] Pretrained weights
 - [ ] Real-world SR
@@ -63,13 +65,13 @@
 
 | Model          | Task                 | Test_dataset | PSNR | SSIM | ckpt_link | log_file |
 | -------------- | -------------------- | ------------ | ---- | ---- | --------- | -------- |
-| MambaIR_SR2    | Classic SR x2        | Urban100     |      |      | link      | link     |
-| MambaIR_SR3    | Classic SR x3        | Urban100     |      |      | link      | link     |
-| MambaIR_SR4    | Classic SR x4        | Urban100     |      |      | link      | link     |
-| MambaIR_light2 | Lightweight SR x2    | Urban100     |      |      | link      | link     |
-| MambaIR_light3 | Lightweight SR x3    | Urban100     |      |      | link      | link     |
-| MambaIR_light4 | Lightweight SR x4    | Urban100     |      |      | link      | link     |
-| MambaIR_realDN | Real image Denoising | SIDD         |      |      | link      | link     |
+| MambaIR_SR2    | Classic SR x2        | Urban100     | 34.15 |   0.9446   | link      | link     |
+| MambaIR_SR3    | Classic SR x3        | Urban100     | 29.93 |  0.8841    | link      | link     |
+| MambaIR_SR4    | Classic SR x4        | Urban100     | 27.68 |  0.8287    | link      | link     |
+| MambaIR_light2 | Lightweight SR x2    | Urban100     | 32.86 |  0.9343   | link      | link     |
+| MambaIR_light3 | Lightweight SR x3    | Urban100     | 28.73 |   0.8635  | link      | link     |
+| MambaIR_light4 | Lightweight SR x4    | Urban100     | 26.53| 0.7983     | link      | link     |
+| MambaIR_realDN | Real image Denoising | SIDD         | 39.89|   0.960   | link      | link     |
 
 
 ## <a name="results"></a> 🥇 Results
