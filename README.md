@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets/logo.png" width="340">
+    <img src="assets/logo.png" width="300">
 </p>
 
 ## MambaIR: A Simple Baseline for Image Restoration with State-Space Model
