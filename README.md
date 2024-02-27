@@ -4,7 +4,7 @@
 
 ## MambaIR: A Simple Baseline for Image Restoration with State-Space Model
 
-[[Paper](https://arxiv.org/abs/2402.15648)] [Zhihu(知乎)]
+[[Paper](https://arxiv.org/abs/2402.15648)] [[Zhihu(知乎)](https://zhuanlan.zhihu.com/p/684248751)]
 
 
 [Hang Guo](https://github.com/csguoh)\*, [Jinmin Li](https://github.com/THU-Kingmin)\*, [Tao Dai](https://cstaodai.com/), Zhihao Ouyang, Xudong Ren, and [Shu-Tao Xia](https://scholar.google.com/citations?hl=zh-CN&user=koAXTXgAAAAJ)
