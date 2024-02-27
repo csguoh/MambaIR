@@ -38,7 +38,7 @@
 ## <a name="visual_results"></a>:eyes:Visual Results On Classic Image SR
 
 <p align="center">
-  <img width="800" src="assets/visual.png">
+  <img width="800" src="assets/visual_results.png">
 </p>
 
 
