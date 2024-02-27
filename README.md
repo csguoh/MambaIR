@@ -7,11 +7,11 @@
 [[Paper](https://arxiv.org/abs/2402.15648)] [Zhihu(知乎)]
 
 
-[Hang Guo](https://github.com/csguoh)\*, Jinmin Li\*, [Tao Dai](https://cstaodai.com/), Zhihao Ouyang, Xudong Ren, and [Shu-Tao Xia](https://scholar.google.com/citations?hl=zh-CN&user=koAXTXgAAAAJ)
+[Hang Guo](https://github.com/csguoh)\*, [Jinmin Li](https://github.com/THU-Kingmin)\*, [Tao Dai](https://cstaodai.com/), Zhihao Ouyang, Xudong Ren, and [Shu-Tao Xia](https://scholar.google.com/citations?hl=zh-CN&user=koAXTXgAAAAJ)
 
 (\*) equal contribution
 
-> **Abstract:**  Recent years have witnessed great progress in image restoration thanks to the advancements in modern deep neural networks \textit{e.g.} Convolutional Neural Network and Transformer. However, existing restoration backbones are usually limited due to the inherent local reductive bias or quadratic computational complexity. Recently, Selective Structured State Space Model \textit{e.g.}, Mamba, have shown great potential for long-range dependencies modeling with linear complexity, but it is still under-explored in low-level computer vision. In this work, we introduce a simple but strong benchmark model, named MambaIR, for image restoration. In detail, we propose the Residual State Space Block as the core component, which employs convolution and channel attention to enhance capabilities of the vanilla Mamba. In this way, our MambaIR takes advantages of local patch recurrence prior as well as channel interaction to produce restoration-specific feature representation. Extensive experiments demonstrate the superiority of our method, for example, MambaIR outperforms Transformer-based baseline SwinIR by up to 0.36dB, using similar computational cost but with global receptive field. 
+> **Abstract:**  Recent years have witnessed great progress in image restoration thanks to the advancements in modern deep neural networks e.g. Convolutional Neural Network and Transformer. However, existing restoration backbones are usually limited due to the inherent local reductive bias or quadratic computational complexity. Recently, Selective Structured State Space Model e.g., Mamba, have shown great potential for long-range dependencies modeling with linear complexity, but it is still under-explored in low-level computer vision. In this work, we introduce a simple but strong benchmark model, named MambaIR, for image restoration. In detail, we propose the Residual State Space Block as the core component, which employs convolution and channel attention to enhance capabilities of the vanilla Mamba. In this way, our MambaIR takes advantages of local patch recurrence prior as well as channel interaction to produce restoration-specific feature representation. Extensive experiments demonstrate the superiority of our method, for example, MambaIR outperforms Transformer-based baseline SwinIR by up to 0.36dB, using similar computational cost but with global receptive field. 
 
 
 <p align="center">
@@ -44,8 +44,8 @@
 
 ## <a name="news"></a> 🆕 News
 
+- **2024-2-23:** arXiv paper available.
 - **2024-2-27:** This repo is released.
-- **2024-2-27:** arXiv paper available.
 
 
 
@@ -54,8 +54,9 @@
 
 - [x] Build the repo
 - [x] arXiv version
-- [ ] Release code
-- [ ] Pretrained weights
+- [x] Release code
+- [ ] Pretrained weights&log_files
+- [ ] Guassian Color Image Denosing
 - [ ] Real-world SR
 - [ ] JPEG Compression Artifact Redection
 - [ ] More Tasks
@@ -63,7 +64,7 @@
 
 ## <a name="model_summary"></a> :page_with_curl: Model Summary
 
-| Model          | Task                 | Test_dataset | PSNR | SSIM | ckpt_link | log_file |
+| Model          | Task                 | Test_dataset | PSNR | SSIM | model_weights | log_files |
 | -------------- | -------------------- | ------------ | ---- | ---- | --------- | -------- |
 | MambaIR_SR2    | Classic SR x2        | Urban100     | 34.15 |   0.9446   | link      | link     |
 | MambaIR_SR3    | Classic SR x3        | Urban100     | 29.93 |  0.8841    | link      | link     |
@@ -143,8 +144,6 @@ pip install mamba_ssm==1.0.1
 
 2. Follow the instructions below to begin training our model.
 
-3.
-
 ```
 # Claissc SR task, cropped input=64×64, 8 GPUs, batch size=4 per GPU
 python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_SR_x2.yml --launcher pytorch
@@ -162,7 +161,7 @@ python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr
 ### Train on Real Denoising
 
 1. Please download the corresponding training datasets and put them in the folder datasets/SIDD. Note that we provide both training and validating files, which are already processed.
-2. Go to folder 'realDenoising'. Follow the instructions below to train our ART model.
+2. Go to folder 'realDenoising'. Follow the instructions below to train our model.
 
 ``` 
 # go to the folder
@@ -174,7 +173,7 @@ python -m torch.distributed.launch --nproc_per_node=8 --master_port=2414 basicsr
 Run the script then you can find the generated experimental logs in the folder realDenoising/experiments.
 ```
 
-Remember to go back to the original environment if you finish all the training or testing about real image denoising task. This is a friendly hint in order to prevent confusion in the training environment.
+3. Remember to go back to the original environment if you finish all the training or testing about real image denoising task. This is a friendly hint in order to prevent confusion in the training environment.
 ```
 # Tips here. Go back to the original environment (BasicSRv1.3.5) after finishing all the training or testing about real image denoising. 
 cd ..
@@ -186,8 +185,51 @@ python setup.py develop
 
 ### Test on SR
 
+1. Please download the corresponding testing datasets and put them in the folder datasets/SR. Download the corresponding models and put them in the folder experiments/pretrained_models.
 
-### Test on Real Denoising
+2. Follow the instructions below to begin testing our MambaIR model.
+```
+# test for image SR. 
+python basicsr/test.py -opt options/test/test_MambaIR_SR_x2.yml
+python basicsr/test.py -opt options/test/test_MambaIR_SR_x3.yml
+python basicsr/test.py -opt options/test/test_MambaIR_SR_x4.yml
+# test for lightweight image SR. 
+python basicsr/test.py -opt options/test/test_MambaIR_lightSR_x2.yml
+python basicsr/test.py -opt options/test/test_MambaIR_lightSR_x3.yml
+python basicsr/test.py -opt options/test/test_MambaIR_lightSR_x4.yml
+```
+
+
+
+
+### Test on Real Image Denoising
+
+1. Download the [SIDD test](https://drive.google.com/file/d/11vfqV-lqousZTuAit1Qkqghiv_taY0KZ/view) and [DND test](https://drive.google.com/file/d/1CYCDhaVxYYcXhSfEVDUwkvJDtGxeQ10G/view?usp=sharing). Place them in `datasets/RealDN`.  Download the corresponding models and put them in the folder `experiments/pretrained_models`. 
+2. Go to folder 'realDenoising'. Follow the instructions below to test our model. The output is in `realDenoising/results/Real_Denoising`.
+    ```bash
+    # go to the folder
+    cd realDenoising
+    # set the new environment (BasicSRv1.2.0), which is the same with Restormer for testing.
+    python setup.py develop --no_cuda_ext
+    # test MambaIR (training total iterations = 300K) on SSID
+    python test_real_denoising_sidd.py
+    # test MambaIR (training total iterations = 300K) on DND
+    python test_real_denoising_dnd.py
+    ```
+3. Run the scripts below to reproduce PSNR/SSIM on SIDD. 
+   ```bash
+   run evaluate_sidd.m
+   ```
+4. For PSNR/SSIM scores on DND, you can upload the genetated DND mat files to the [online server](https://noise.visinf.tu-darmstadt.de/) and get the results.
+
+5. Remerber to go back to the original environment if you finish all the training or testing about real image denoising task. This is a friendly hint in order to prevent confusion in the training environment.
+    ```bash
+    # Tips here. Go back to the original environment (BasicSRv1.3.5) after finishing all the training or testing about real image denoising. 
+    cd ..
+    python setup.py develop
+    ```
+
+
 
 
 ## <a name="cite"></a> 🥰 Citation
@@ -195,7 +237,7 @@ python setup.py develop
 Please cite us if our work is useful for your research.
 
 ```
-@article{guo202mambair,
+@article{guo2024mambair,
   title={MambaIR: A Simple Baseline for Image Restoration with State-Space Model},
   author={Hang Guo, Jinmin Li, Tao Dai, Zhihao Ouyang, Xudong Ren, and Shu-Tao Xia},
   journal={arXiv preprint arXiv:2402.15648},
