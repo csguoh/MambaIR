@@ -1,0 +1,3 @@
+For real image denoising task, following Restormer and ART, we make two differences when compared to other tasks. Firstly, we design our model with the U-net structure, which is similar with Restormer. Secondly, we train under the same training settings with Restormer, which means that we use the same [BasicSR](https://github.com/xinntao/BasicSR) environment (v1.2.0) and progressive training strategy. Therefore, we can make fair comparisons with Restormer.
+
+Note that this folder is built basd on [Restormer](https://github.com/swz30/Restormer). Thanks for their awesome works.
