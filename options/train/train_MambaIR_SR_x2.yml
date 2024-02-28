@@ -45,7 +45,6 @@ network_g:
   upscale: 2
   in_chans: 3
   img_size: 64
-  window_size: 8
   img_range: 1.
   d_state: 16
   depths: [6, 6, 6, 6, 6, 6]
