@@ -46,7 +46,7 @@
 
 - **2024-2-23:** arXiv paper available.
 - **2024-2-27:** This repo is released.
-
+- **2024-3-01:** Pretrained weights for SR and realDN is available. :tada:
 
 
 
@@ -55,7 +55,7 @@
 - [x] Build the repo
 - [x] arXiv version
 - [x] Release code
-- [ ] Pretrained weights&log_files
+- [x] Pretrained weights&log_files
 - [ ] Guassian Color Image Denosing
 - [ ] Real-world SR
 - [ ] JPEG Compression Artifact Redection
@@ -66,13 +66,13 @@
 
 | Model          | Task                 | Test_dataset | PSNR | SSIM | model_weights | log_files |
 | -------------- | -------------------- | ------------ | ---- | ---- | --------- | -------- |
-| MambaIR_SR2    | Classic SR x2        | Urban100     | 34.15 |   0.9446   | link      | [link](https://drive.google.com/file/d/1XzBkBPPb5jymKfGQO3yVePVqWxDMuaF1/view?usp=sharing)     |
-| MambaIR_SR3    | Classic SR x3        | Urban100     | 29.93 |  0.8841    | link      | [link](https://drive.google.com/file/d/1cmMwVLfoUiPVlF9uokk1LM6GBpsewZp0/view?usp=sharing)     |
-| MambaIR_SR4    | Classic SR x4        | Urban100     | 27.68 |  0.8287    | link      | [link](https://drive.google.com/file/d/18clazq4oVfiQwgPyqRwS3k89htbg3Btg/view?usp=sharing)     |
-| MambaIR_light2 | Lightweight SR x2    | Urban100     | 32.86 |  0.9343   | link      | [link](https://drive.google.com/file/d/1Q7j3XCTBp3GZ_C3S4rbDuZp0UtxOPo8D/view?usp=sharing)     |
-| MambaIR_light3 | Lightweight SR x3    | Urban100     | 28.73 |   0.8635  | link      | [link](https://drive.google.com/file/d/1Eo_kG_wzqOhQJFMvUbhajfRlTuoc0rAZ/view?usp=drive_link)     |
-| MambaIR_light4 | Lightweight SR x4    | Urban100     | 26.53| 0.7983     | link      | [link](https://drive.google.com/file/d/1TCYqo6Qu70Ii6U5jUxHDACz2NgrvOzw7/view?usp=sharing)     |
-| MambaIR_realDN | Real image Denoising | SIDD         | 39.89|   0.960   | link      | [link](https://drive.google.com/file/d/1FZ0ZOw5gXRs1hGMzm_21QDs0q_3rCtix/view?usp=sharing)     |
+| MambaIR_SR2    | Classic SR x2        | Urban100     | 34.15 |   0.9446   | [link](https://drive.google.com/file/d/11Kiy_0hmMyDjMvW7MmbUT6tO9n5JrDeB/view?usp=sharing)      | [link](https://drive.google.com/file/d/1XzBkBPPb5jymKfGQO3yVePVqWxDMuaF1/view?usp=sharing)     |
+| MambaIR_SR3    | Classic SR x3        | Urban100     | 29.93 |  0.8841    | [link](https://drive.google.com/file/d/1u0VcESEduHu-GBCC6vDGQt9qXSX2AKdn/view?usp=sharing)      | [link](https://drive.google.com/file/d/1cmMwVLfoUiPVlF9uokk1LM6GBpsewZp0/view?usp=sharing)     |
+| MambaIR_SR4    | Classic SR x4        | Urban100     | 27.68 |  0.8287    | [link](https://drive.google.com/file/d/1YXggWIsi-auCjmPQDvW9FjB1f9fZK0hN/view?usp=sharing)      | [link](https://drive.google.com/file/d/18clazq4oVfiQwgPyqRwS3k89htbg3Btg/view?usp=sharing)     |
+| MambaIR_light2 | Lightweight SR x2    | Urban100     | 32.86 |  0.9343   | [link](https://drive.google.com/file/d/1mI3vVcv1inEZ8XmDudk4G8HYcPMUO0cg/view?usp=sharing)      | [link](https://drive.google.com/file/d/1Q7j3XCTBp3GZ_C3S4rbDuZp0UtxOPo8D/view?usp=sharing)     |
+| MambaIR_light3 | Lightweight SR x3    | Urban100     | 28.73 |   0.8635  | [link](https://drive.google.com/file/d/1tphJw5diWpvX95ZLFCHNTP8QfKtb3uHx/view?usp=sharing)      | [link](https://drive.google.com/file/d/1Eo_kG_wzqOhQJFMvUbhajfRlTuoc0rAZ/view?usp=drive_link)     |
+| MambaIR_light4 | Lightweight SR x4    | Urban100     | 26.53| 0.7983     | [link](https://drive.google.com/file/d/1MHJ2ZP7P6Rfb29hDAwZj9SZqIUCLffFU/view?usp=sharing)      | [link](https://drive.google.com/file/d/1TCYqo6Qu70Ii6U5jUxHDACz2NgrvOzw7/view?usp=sharing)     |
+| MambaIR_realDN | Real image Denoising | SIDD         | 39.89|   0.960   | [link](https://drive.google.com/file/d/1iMcapgaT7VPfR2UFYy21KbX3rUHFJCU8/view?usp=sharing)      | [link](https://drive.google.com/file/d/1FZ0ZOw5gXRs1hGMzm_21QDs0q_3rCtix/view?usp=sharing)     |
 
 
 ## <a name="results"></a> 🥇 Results
