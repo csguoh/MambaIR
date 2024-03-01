@@ -136,7 +136,7 @@ pip install causal_conv1d==1.0.0
 pip install mamba_ssm==1.0.1
 ```
 
-One can also create a new anaconda environment, and then install necessary python libraries with this [requirement.txt](https://drive.google.com/file/d/1SXtjaYDRN53Mz4LsCkgcL3wV23cOa8_P/view?usp=sharing) and the following commmand: 
+One can also create a new anaconda environment, and then install necessary python libraries with this [requirement.txt](https://drive.google.com/file/d/1SXtjaYDRN53Mz4LsCkgcL3wV23cOa8_P/view?usp=sharing) and the following command: 
 ```
 conda install --yes --file requirements.txt
 ```
