@@ -47,7 +47,7 @@
 - **2024-2-23:** arXiv paper available.
 - **2024-2-27:** This repo is released.
 - **2024-3-01:** Pretrained weights for SR and realDN is available. :tada:
-
+- **2024-3-08:** The code for ERF visualization and model complexity analysis can be found at `./analysis/` 😄
 
 
 ## <a name="todo"></a> ☑️ TODO
@@ -56,7 +56,7 @@
 - [x] arXiv version
 - [x] Release code
 - [x] Pretrained weights&log_files
-- [ ] Add code for complexity analysis and ERF visualization
+- [x] Add code for complexity analysis and ERF visualization
 - [ ] Guassian Color Image Denosing
 - [ ] Real-world SR
 - [ ] JPEG Compression Artifact Redection
