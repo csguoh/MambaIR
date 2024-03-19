@@ -40,18 +40,14 @@ class ChannelAttention(nn.Module):
 class CAB(nn.Module):
     def __init__(self, num_feat, is_light_sr= False, compress_ratio=3,squeeze_factor=30):
         super(CAB, self).__init__()
-        if is_light_sr: # we use depth-wise conv for light-SR to achieve more efficient
-            self.cab = nn.Sequential(
-                nn.Conv2d(num_feat, num_feat, 3, 1, 1, groups=num_feat),
-                ChannelAttention(num_feat, squeeze_factor)
-            )
-        else: # for classic SR
-            self.cab = nn.Sequential(
-                nn.Conv2d(num_feat, num_feat // compress_ratio, 3, 1, 1),
-                nn.GELU(),
-                nn.Conv2d(num_feat // compress_ratio, num_feat, 3, 1, 1),
-                ChannelAttention(num_feat, squeeze_factor)
-            )
+        if is_light_sr: # a larger compression ratio is used for light-SR
+            compress_ratio = 6
+        self.cab = nn.Sequential(
+            nn.Conv2d(num_feat, num_feat // compress_ratio, 3, 1, 1),
+            nn.GELU(),
+            nn.Conv2d(num_feat // compress_ratio, num_feat, 3, 1, 1),
+            ChannelAttention(num_feat, squeeze_factor)
+        )
 
     def forward(self, x):
         return self.cab(x)

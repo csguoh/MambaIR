@@ -1,8 +1,8 @@
 # general settings for image SR training
-name: MambaIR_SR_x4
+name: MambaIR_lightSR_x4_pre
 model_type: MambaIRModel
 scale: 4
-num_gpu: 4
+num_gpu: 2
 manual_seed: 10
 
 # dataset and data loader settings
@@ -12,9 +12,9 @@ datasets:
     name: DF2K
     type: PairedImageDataset
     dataroot_gt:
-      - /data1/guohang/dataset/DF2K/DF2K/HR
+      - /apdcephfs_cq10/share_1275055/lijinmin/datasets/DIV2K/HR
     dataroot_lq:
-      - /data1/guohang/dataset/DF2K/DF2K/LR_bicubic/X4
+      - /apdcephfs_cq10/share_1275055/lijinmin/datasets/DIV2K/LR_bicubic/X4
     filename_tmpl: '{}x4'
     io_backend:
       type: disk
@@ -26,15 +26,15 @@ datasets:
     # data loader
     use_shuffle: true
     num_worker_per_gpu: 32
-    batch_size_per_gpu: 8
+    batch_size_per_gpu: 16
     dataset_enlarge_ratio: 100
     prefetch_mode: ~
 
   val:
-    name: Set14
+    name: Urban100
     type: PairedImageDataset
-    dataroot_gt: /data1/guohang/dataset/SR/Set14/HR
-    dataroot_lq: /data1/guohang/dataset/SR/Set14/LR_bicubic/X4
+    dataroot_gt: /apdcephfs_cq10/share_1275055/lijinmin/datasets/IRdatasets/SR/Urban100/HR
+    dataroot_lq: /apdcephfs_cq10/share_1275055/lijinmin/datasets/IRdatasets/SR/Urban100/LR_bicubic/X4
     filename_tmpl: '{}x4'
     io_backend:
       type: disk
@@ -49,14 +49,14 @@ network_g:
   d_state: 16
   depths: [6, 6, 6, 6]
   embed_dim: 60
-  mlp_ratio: 1.2
+  mlp_ratio: 1.5
   upsampler: 'pixelshuffledirect'
   resi_connection: '1conv'
 
 # path
 path:
-  pretrain_network_g: ~
-  strict_load_g: true
+  pretrain_network_g: /apdcephfs_cq10/share_1275055/lijinmin/taiji_log/MambaIR/experiments/MambaIR_lightSR_x2/models/net_g_470000.pth # x2 path
+  strict_load_g: false
   resume_state: ~
 
 # training settings

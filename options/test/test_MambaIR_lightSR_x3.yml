@@ -2,15 +2,15 @@
 name: test_MambaIR_lightSR_x3
 model_type: MambaIRModel
 scale: 3
-num_gpu: 4
+num_gpu: 1
 manual_seed: 10
 
 datasets:
   test_1:  # the 1st test dataset
     name: Set5
     type: PairedImageDataset
-    dataroot_gt: /data1/guohang/dataset/SR/Set5/HR
-    dataroot_lq: /data1/guohang/dataset/SR/Set5/LR_bicubic/X3 
+    dataroot_gt: /apdcephfs_cq10/share_1275055/lijinmin/datasets/IRdatasets/SR/Set5/HR
+    dataroot_lq: /apdcephfs_cq10/share_1275055/lijinmin/datasets/IRdatasets/SR/Set5/LR_bicubic/X3 
     filename_tmpl: '{}x3'
     io_backend:
       type: disk
@@ -18,8 +18,8 @@ datasets:
   test_2:  # the 2nd test dataset
     name: Set14
     type: PairedImageDataset
-    dataroot_gt: /data1/guohang/dataset/SR/Set14/HR 
-    dataroot_lq: /data1/guohang/dataset/SR/Set14/LR_bicubic/X3 
+    dataroot_gt: /apdcephfs_cq10/share_1275055/lijinmin/datasets/IRdatasets/SR/Set14/HR 
+    dataroot_lq: /apdcephfs_cq10/share_1275055/lijinmin/datasets/IRdatasets/SR/Set14/LR_bicubic/X3 
     filename_tmpl: '{}x3'
     io_backend:
       type: disk
@@ -27,8 +27,8 @@ datasets:
   test_3:  # the 3rd test dataset
     name: B100
     type: PairedImageDataset
-    dataroot_gt: /data1/guohang/dataset/SR/B100/HR 
-    dataroot_lq: /data1/guohang/dataset/SR/B100/LR_bicubic/X3
+    dataroot_gt: /apdcephfs_cq10/share_1275055/lijinmin/datasets/IRdatasets/SR/B100/HR 
+    dataroot_lq: /apdcephfs_cq10/share_1275055/lijinmin/datasets/IRdatasets/SR/B100/LR_bicubic/X3
     filename_tmpl: '{}x3'
     io_backend:
       type: disk
@@ -36,8 +36,8 @@ datasets:
   test_4:  # the 4th test dataset
     name: Urban100
     type: PairedImageDataset
-    dataroot_gt: /data1/guohang/dataset/SR/Urban100/HR 
-    dataroot_lq: /data1/guohang/dataset/SR/Urban100/LR_bicubic/X3
+    dataroot_gt: /apdcephfs_cq10/share_1275055/lijinmin/datasets/IRdatasets/SR/Urban100/HR 
+    dataroot_lq: /apdcephfs_cq10/share_1275055/lijinmin/datasets/IRdatasets/SR/Urban100/LR_bicubic/X3
     filename_tmpl: '{}x3'
     io_backend:
       type: disk
@@ -45,8 +45,8 @@ datasets:
   test_5:  # the 5th test dataset
     name: Manga109
     type: PairedImageDataset
-    dataroot_gt: /data1/guohang/dataset/SR/Manga109/HR 
-    dataroot_lq: /data1/guohang/dataset/SR/Manga109/LR_bicubic/X3 
+    dataroot_gt: /apdcephfs_cq10/share_1275055/lijinmin/datasets/IRdatasets/SR/Manga109/HR 
+    dataroot_lq: /apdcephfs_cq10/share_1275055/lijinmin/datasets/IRdatasets/SR/Manga109/LR_bicubic/X3 
     filename_tmpl: '{}_LRBI_x3'
     io_backend:
       type: disk
@@ -63,17 +63,17 @@ network_g:
   d_state: 16
   depths: [6, 6, 6, 6]
   embed_dim: 60
-  mlp_ratio: 1.2
+  mlp_ratio: 1.5
   upsampler: 'pixelshuffledirect'
   resi_connection: '1conv'
 # path
 path:
-  pretrain_network_g: /data1/guohang/MambaIR-main/experiments/MambaIR_lightSR_x3/models/net_g_495000.pth
+  pretrain_network_g: /apdcephfs_cq10/share_1275055/lijinmin/taiji_log/MambaIR/experiments/MambaIR_lightSR_x3_pre/models/net_g_460000.pth
   strict_load_g: true
 
 # validation settings
 val:
-  save_img: false
+  save_img: true
   suffix: ~  # add suffix to saved images, if None, use exp name
 
   metrics:

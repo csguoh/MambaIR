@@ -35,6 +35,16 @@
 - [Citation](#cite)
 
 
+
+## <a name="Real-SR"></a>🔍 Visual Results On Real-world SR
+
+[<img src="assets/imgsli1.png" height="300"/>](https://imgsli.com/MjQ4MzQz) [<img src="assets/imgsli2.png" height="300"/>](https://imgsli.com/MjQ4MzQ2) [<img src="assets/imgsli3.png" height="300"/>](https://imgsli.com/MjQ4MzQ3)
+
+[<img src="assets/imgsli4.png" height="300"/>](https://imgsli.com/MjQ4MzQ5) [<img src="assets/imgsli5.png" height="300"/>](https://imgsli.com/MjQ4MzUx) [<img src="assets/imgsli6.png" height="300"/>](https://imgsli.com/MjQ4MzUz)
+
+
+
+
 ## <a name="visual_results"></a>:eyes:Visual Results On Classic Image SR
 
 <p align="center">
@@ -48,6 +58,10 @@
 - **2024-2-27:** This repo is released.
 - **2024-3-01:** Pretrained weights for SR and realDN is available. :tada:
 - **2024-3-08:** The code for ERF visualization and model complexity analysis can be found at `./analysis/` 😄
+- **2024-3-19:** We have updated the code for MambaIR-light. Training with only DIV2K, it can achieve better performance (outperform SRFormer by up to **0.2dB**)
+- **2024-3-19:** 🔈🔈🔈**BIG NEWS：** **The FIRST Mamba-based Real-world SR Model** is now available! Enjoy yourself 😊.
+
+
 
 
 ## <a name="todo"></a> ☑️ TODO
@@ -57,23 +71,25 @@
 - [x] Release code
 - [x] Pretrained weights&log_files
 - [x] Add code for complexity analysis and ERF visualization
+- [x] Real-world SR
 - [ ] Guassian Color Image Denosing
-- [ ] Real-world SR
+- [ ] Add Download Link for Visual Results on Common Benckmarks
 - [ ] JPEG Compression Artifact Redection
 - [ ] More Tasks
  
 
 ## <a name="model_summary"></a> :page_with_curl: Model Summary
 
-| Model          | Task                 | Test_dataset | PSNR | SSIM | model_weights | log_files |
-| -------------- | -------------------- | ------------ | ---- | ---- | --------- | -------- |
-| MambaIR_SR2    | Classic SR x2        | Urban100     | 34.15 |   0.9446   | [link](https://drive.google.com/file/d/11Kiy_0hmMyDjMvW7MmbUT6tO9n5JrDeB/view?usp=sharing)      | [link](https://drive.google.com/file/d/1XzBkBPPb5jymKfGQO3yVePVqWxDMuaF1/view?usp=sharing)     |
-| MambaIR_SR3    | Classic SR x3        | Urban100     | 29.93 |  0.8841    | [link](https://drive.google.com/file/d/1u0VcESEduHu-GBCC6vDGQt9qXSX2AKdn/view?usp=sharing)      | [link](https://drive.google.com/file/d/1cmMwVLfoUiPVlF9uokk1LM6GBpsewZp0/view?usp=sharing)     |
-| MambaIR_SR4    | Classic SR x4        | Urban100     | 27.68 |  0.8287    | [link](https://drive.google.com/file/d/1YXggWIsi-auCjmPQDvW9FjB1f9fZK0hN/view?usp=sharing)      | [link](https://drive.google.com/file/d/18clazq4oVfiQwgPyqRwS3k89htbg3Btg/view?usp=sharing)     |
-| MambaIR_light2 | Lightweight SR x2    | Urban100     | 32.86 |  0.9343   | [link](https://drive.google.com/file/d/1mI3vVcv1inEZ8XmDudk4G8HYcPMUO0cg/view?usp=sharing)      | [link](https://drive.google.com/file/d/1Q7j3XCTBp3GZ_C3S4rbDuZp0UtxOPo8D/view?usp=sharing)     |
-| MambaIR_light3 | Lightweight SR x3    | Urban100     | 28.73 |   0.8635  | [link](https://drive.google.com/file/d/1tphJw5diWpvX95ZLFCHNTP8QfKtb3uHx/view?usp=sharing)      | [link](https://drive.google.com/file/d/1Eo_kG_wzqOhQJFMvUbhajfRlTuoc0rAZ/view?usp=drive_link)     |
-| MambaIR_light4 | Lightweight SR x4    | Urban100     | 26.53| 0.7983     | [link](https://drive.google.com/file/d/1MHJ2ZP7P6Rfb29hDAwZj9SZqIUCLffFU/view?usp=sharing)      | [link](https://drive.google.com/file/d/1TCYqo6Qu70Ii6U5jUxHDACz2NgrvOzw7/view?usp=sharing)     |
-| MambaIR_realDN | Real image Denoising | SIDD         | 39.89|   0.960   | [link](https://drive.google.com/file/d/1iMcapgaT7VPfR2UFYy21KbX3rUHFJCU8/view?usp=sharing)      | [link](https://drive.google.com/file/d/1FZ0ZOw5gXRs1hGMzm_21QDs0q_3rCtix/view?usp=sharing)     |
+| Model          | Task                 | Test_dataset | PSNR  | SSIM   | model_weights | log_files |
+|----------------|----------------------|--------------|-------|--------| --------- | -------- |
+| MambaIR_SR2    | Classic SR x2        | Urban100     | 34.15 | 0.9446 | [link](https://drive.google.com/file/d/11Kiy_0hmMyDjMvW7MmbUT6tO9n5JrDeB/view?usp=sharing)      | [link](https://drive.google.com/file/d/1XzBkBPPb5jymKfGQO3yVePVqWxDMuaF1/view?usp=sharing)     |
+| MambaIR_SR3    | Classic SR x3        | Urban100     | 29.93 | 0.8841 | [link](https://drive.google.com/file/d/1u0VcESEduHu-GBCC6vDGQt9qXSX2AKdn/view?usp=sharing)      | [link](https://drive.google.com/file/d/1cmMwVLfoUiPVlF9uokk1LM6GBpsewZp0/view?usp=sharing)     |
+| MambaIR_SR4    | Classic SR x4        | Urban100     | 27.68 | 0.8287 | [link](https://drive.google.com/file/d/1YXggWIsi-auCjmPQDvW9FjB1f9fZK0hN/view?usp=sharing)      | [link](https://drive.google.com/file/d/18clazq4oVfiQwgPyqRwS3k89htbg3Btg/view?usp=sharing)     |
+| MambaIR_light2 | Lightweight SR x2    | Urban100     | 32.92 | 0.9356 | [link](https://drive.google.com/file/d/1kMCxoD-WEWaLcADJ7ZKV5B7jPpiYBkC2/view?usp=sharing)      | [link](https://drive.google.com/file/d/14cyT7vCvbCjWrtlYzFhXKc0OVBccRFU6/view?usp=sharing)     |
+| MambaIR_light3 | Lightweight SR x3    | Urban100     | 29.00 | 0.8689 | [link](https://drive.google.com/file/d/1emoHPdBca99_7yx09kuTOCXU3nMOnBY-/view?usp=sharing)      | [link](https://drive.google.com/file/d/1a_zIDyyQA69ZsZiKOubj2EpvLCnH_9pO/view?usp=sharing)     |
+| MambaIR_light4 | Lightweight SR x4    | Urban100     | 26.75 | 0.8051 | [link](https://drive.google.com/file/d/1Qv_jTuP2P5tTaGQ8SgQuB7W9Cl-YPqH5/view?usp=sharing)      | [link](https://drive.google.com/file/d/1W7jbbyao7d9Jw3AY9MEIt_eW-od92Seq/view?usp=sharing)     |
+| MambaIR_realDN | Real image Denoising | SIDD         | 39.89 | 0.960  | [link](https://drive.google.com/file/d/1iMcapgaT7VPfR2UFYy21KbX3rUHFJCU8/view?usp=sharing)      | [link](https://drive.google.com/file/d/1FZ0ZOw5gXRs1hGMzm_21QDs0q_3rCtix/view?usp=sharing)     |
+| MambaIR_realSR | Real-world SR        | RealSRSet    | -     | -      | [link](https://drive.google.com/file/d/1ZOFzcex2g9_B6Xtf8-qnMx08OnAjKD0M/view?usp=sharing)      | [link](https://drive.google.com/file/d/13KNqh3WCn-Lx4gJ8X1K9l8MRERjjcqGw/view?usp=sharing)     |
 
 
 ## <a name="results"></a> 🥇 Results
@@ -158,10 +174,10 @@ python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr
 python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_SR_x3.yml --launcher pytorch
 python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_SR_x4.yml --launcher pytorch
 
-# Lightweight SR task, cropped input=64×64, 2 GPUs, batch size=16 per GPU
-python -m torch.distributed.launch --nproc_per_node=2 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x2.yml --launcher pytorch
-python -m torch.distributed.launch --nproc_per_node=2 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x3.yml --launcher pytorch
-python -m torch.distributed.launch --nproc_per_node=2 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x4.yml --launcher pytorch
+# Lightweight SR task, cropped input=64×64, 8 GPUs, batch size=8 per GPU
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x2.yml --launcher pytorch
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x3.yml --launcher pytorch
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x4.yml --launcher pytorch
 ```
 
 3. Run the script then you can find the generated experimental logs in the folder experiments.
