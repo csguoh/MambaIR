@@ -116,6 +116,17 @@ We achieve state-of-the-art performance on various image restoration tasks. Deta
 
 
 <details>
+<summary>Evaluation on Gaussian Color Image Denoising (click to expand)</summary>
+
+<p align="center">
+  <img width="500" src="assets/gaussian_dn.png">
+</p>
+
+</details>
+
+
+
+<details>
 <summary>Evaluation on Real Image Denoising (click to expand)</summary>
 
 <p align="center">
