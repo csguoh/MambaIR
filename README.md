@@ -59,7 +59,8 @@
 - **2024-3-01:** Pretrained weights for SR and realDN is available. :tada:
 - **2024-3-08:** The code for ERF visualization and model complexity analysis can be found at `./analysis/` 😄
 - **2024-3-19:** We have updated the code for MambaIR-light. Training with only DIV2K, it can achieve better performance (outperform SRFormer by up to **0.2dB**)
-- **2024-3-19:** 🔈🔈🔈**BIG NEWS：** **The FIRST Mamba-based Real-world SR Model** is now available! Enjoy yourself 😊.
+- **2024-3-19:** **BIG NEWS：** **The FIRST Mamba-based Real-world SR Model** is now available! Enjoy yourself 😊.
+- **2024-05-24**:🔈🔈🔈We have released a new repository to collect recent works of **Mamba in low-level-vision**, please see [here](https://github.com/csguoh/Awesome-Mamba-in-Low-Level-Vision) if you are instersted ;D
 
 
 
