@@ -230,7 +230,7 @@ python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr
 ### Train on Gaussian Color Image Denosing
 
 
-1. Download the corresponding training datasets [here](datasets) and put them in the folder `./datasets/DFWB_RGB`. Download the testing datasets and put them in the folder `./datasets/ColorDN`.
+1. Download the corresponding training datasets [here](#datasets) and put them in the folder `./datasets/DFWB_RGB`. Download the testing datasets and put them in the folder `./datasets/ColorDN`.
 
 
 2. Follow the instructions below to begin training:
