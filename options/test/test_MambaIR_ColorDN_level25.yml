@@ -64,7 +64,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: experiments/pretrained_models/ColorDN_ART_level25.pth
+  pretrain_network_g: experiments/pretrained_models/ColorDN_MambaIR_level25.pth
 
 # validation settings
 val:
