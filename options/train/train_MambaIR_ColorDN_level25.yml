@@ -53,7 +53,7 @@ network_g:
 
 
 path:
-  pretrain_network_g: ./experiments/pretrained_models/ColorDN_ART_level15.pth
+  pretrain_network_g: ./experiments/pretrained_models/ColorDN_MambaIR_level15.pth
   strict_load_g: true
   resume_state: ~
 
