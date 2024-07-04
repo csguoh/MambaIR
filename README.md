@@ -7,8 +7,13 @@
 ### [[Paper](https://arxiv.org/abs/2402.15648)] [[Zhihu(知乎)](https://zhuanlan.zhihu.com/p/684248751)]
 
 
+
+
 [Hang Guo](https://github.com/csguoh)\*, [Jinmin Li](https://github.com/THU-Kingmin)\*, [Tao Dai](https://cstaodai.com/), Zhihao Ouyang, Xudong Ren, and [Shu-Tao Xia](https://scholar.google.com/citations?hl=zh-CN&user=koAXTXgAAAAJ)
 
+
+
+### Check our paper collection of recent Awesome Mamba work in Low-Level Vision [[here](https://github.com/csguoh/Awesome-Mamba-in-Low-Level-Vision)] :hugs:.
 
 (\*) equal contribution
 
@@ -60,10 +65,15 @@
 - **2024-3-01:** Pretrained weights for SR and realDN is available. :tada:
 - **2024-3-08:** The code for ERF visualization and model complexity analysis can be found at `./analysis/` 😄
 - **2024-3-19:** We have updated the code for MambaIR-light. Training with only DIV2K, it can achieve better performance (outperform SRFormer by up to **0.2dB**)
-- **2024-3-19:** **BIG NEWS：** **The FIRST Mamba-based Real-world SR Model** is now available! Enjoy yourself 😊.
+- **2024-3-19:** **The FIRST Mamba-based Real-world SR Model** is now available! Enjoy yourself 😊.
 - **2024-05-24**:🔈🔈🔈We have released a new repository to collect recent works of **Mamba in low-level-vision**, please see [here](https://github.com/csguoh/Awesome-Mamba-in-Low-Level-Vision) if you are instersted ;D
-- **2024-06-10**:We have released the training and testing config files for **Guassian Color Image Denosing**, the pre-trained weights are coming soon 👏
+- **2024-06-10**: We have released the training and testing config files for **Guassian Color Image Denosing**, the pre-trained weights are coming soon 👏
 - **2024-06-10**: We have also updated the **environments installation** instruction [here](#installation) for fast building your own mamba environment for reproduce!
+- **2024-07-01**: :fire: :fire: :fire: Congratulations! Our MambaIR has been accepted by **ECCV 2024**！
+- **2024-07-04**: :kissing_heart: We have released the training and testing config files for JPEG compression artifact reduction tasks.
+- **2024-07-04**: The pretrained weight for **Guassian Color Image Denosing** as well as **JPEG Compression Artifact Reduction** are now availbale [here](#model_summary). The performace of these models is futher improved than the reported one in the paper. And we will update the Arxiv version in the future. Enjoy these new models! :yum:
+
+
 
 
 
@@ -76,8 +86,8 @@
 - [x] Add code for complexity analysis and ERF visualization
 - [x] Real-world SR
 - [x] Guassian Color Image Denosing
-- [ ] Add Download Link for Visual Results on Common Benckmarks
-- [ ] JPEG Compression Artifact Redection
+- [x] Add Download Link for Visual Results on Common Benckmarks
+- [x] JPEG Compression Artifact Redection
 - [ ] Futher Improvement...
  
 
@@ -93,10 +103,12 @@
 | MambaIR_light4 | Lightweight SR x4    | Urban100     | 26.75 | 0.8051 | [link](https://drive.google.com/file/d/1Qv_jTuP2P5tTaGQ8SgQuB7W9Cl-YPqH5/view?usp=sharing)      | [link](https://drive.google.com/file/d/1W7jbbyao7d9Jw3AY9MEIt_eW-od92Seq/view?usp=sharing)     |
 | MambaIR_realDN | Real image Denoising | SIDD         | 39.89 | 0.960  | [link](https://drive.google.com/file/d/1iMcapgaT7VPfR2UFYy21KbX3rUHFJCU8/view?usp=sharing)      | [link](https://drive.google.com/file/d/1FZ0ZOw5gXRs1hGMzm_21QDs0q_3rCtix/view?usp=sharing)     |
 | MambaIR_realSR | Real-world SR        | RealSRSet    | -     | -      | [link](https://drive.google.com/file/d/16BBSRz1HellkTgypu4wu3CHA20CLgpSY/view?usp=sharing)      | [link](https://drive.google.com/file/d/13KNqh3WCn-Lx4gJ8X1K9l8MRERjjcqGw/view?usp=sharing)     |
-| MambaIR_guassian15 | Guassian Denosing        | Urban100    | 35.17    | -      | [link]()      | [link]()     |
+| MambaIR_guassian15 | Guassian Denosing        | Urban100    | 35.17    | -      | [link](https://drive.google.com/file/d/1w5Y502iKSkqhP-OpleppPmk6PAnvWPdr/view?usp=sharing)      | [link](https://drive.google.com/file/d/1Gv3M0IVAp8FrxgOC0LyPuwFaUz_05OVa/view?usp=sharing)     |
 | MambaIR_guassian25 | Guassian Denosing      | Urban100    | 32.99     | -      | [link]()      | [link]()     |
 | MambaIR_guassian50 | Guassian Denosing       | Urban100    | 30.07     | -      | [link]()      | [link]()     |
-
+| MambaIR_JEPG10 | JPEG CAR        | Classic5    | 30.27   |   0.8256    | [link]()      | [link]()     |
+| MambaIR_JPEG30 | JPEG CAR      | Classic5   | 33.74  | 0.8965      | [link]()      | [link]()     |
+| MambaIR_JPEG40 | JPEG CAR       | Classic5    | 34.53  | 0.9084    | [link](https://drive.google.com/file/d/1XbuIsLuCtwV78cVMYLuWXm-hNQDsbn6M/view?usp=sharing)      | [link](https://drive.google.com/file/d/1B99jXE_S9c_S0xefGnZm9WZP3dgYy4bR/view?usp=sharing)     |
 
 
 
@@ -253,6 +265,32 @@ python -m torch.distributed.launch --nproc_per_node=8 --master_port=2414 basicsr
 
 
 
+
+### Train on JPEG Compression Artifact Reduction
+
+
+1. Download the corresponding training datasets [here](#datasets) and put them in the folder `./datasets/DFWB_CAR`. Download the testing datasets and put them in the folder `./datasets/JPEG_CAR`.
+
+
+2. Follow the instructions below to begin training:
+
+
+```
+# train on jpeg10
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=2414 basicsr/train.py -opt options/train/train_MambaIR_CAR_q10.yml --launcher pytorch
+
+# train on jpeg30
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=2414 basicsr/train.py -opt options/train/train_MambaIR_CAR_q30.yml --launcher pytorch
+
+# train on jpeg40
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=2414 basicsr/train.py -opt options/train/train_MambaIR_CAR_q40.yml --launcher pytorch
+```
+
+3. Run the script then you can find the generated experimental logs in the folder `./experiments`.
+
+
+
+
 ### Train on Real Denoising
 
 1. Please download the corresponding training datasets and put them in the folder datasets/SIDD. Note that we provide both training and validating files, which are already processed.
@@ -288,6 +326,8 @@ python setup.py develop
 python basicsr/test.py -opt options/test/test_MambaIR_SR_x2.yml
 python basicsr/test.py -opt options/test/test_MambaIR_SR_x3.yml
 python basicsr/test.py -opt options/test/test_MambaIR_SR_x4.yml
+
+
 # test for lightweight image SR. 
 python basicsr/test.py -opt options/test/test_MambaIR_lightSR_x2.yml
 python basicsr/test.py -opt options/test/test_MambaIR_lightSR_x3.yml
@@ -312,6 +352,28 @@ python basicsr/test.py -opt options/test/test_MambaIR_ColorDN_level25.yml
 # test on denosing50
 python basicsr/test.py -opt options/test/test_MambaIR_ColorDN_level50.yml
 ```
+
+
+
+
+### Test on JPEG Compression Artifact Reduction
+1. Please download the corresponding testing datasets and put them in the folder `datasets/JPEG_CAR`. 
+
+2. Download the corresponding models and put them in the folder `experiments/pretrained_models`.
+
+3. Follow the instructions below to begin testing our model.
+
+```
+# test on jpeg10
+python basicsr/test.py -opt options/test/test_MambaIR_JPEG_q10.yml
+
+# test on jpeg30
+python basicsr/test.py -opt options/test/test_MambaIR_JPEG_q30.yml
+
+# test on jpeg40
+python basicsr/test.py -opt options/test/test_MambaIR_JPEG_q40.yml
+```
+
 
 
 
