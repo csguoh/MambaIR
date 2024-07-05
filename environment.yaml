@@ -94,6 +94,7 @@ dependencies:
   - zstd=1.5.5=hc292b87_0
   - pip:
       - absl-py==2.1.0
+      - packaging
       - cachetools==5.3.3
       - causal-conv1d==1.0.0
       - cmake==3.28.3
@@ -137,4 +138,3 @@ dependencies:
       - transformers==4.38.1
       - werkzeug==3.0.1
       - zipp==3.17.0
-prefix: /home/tiger/miniconda3/envs/pytorch
