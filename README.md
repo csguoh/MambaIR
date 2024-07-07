@@ -412,11 +412,11 @@ python basicsr/test.py -opt options/test/test_MambaIR_JPEG_q40.yml
 Please cite us if our work is useful for your research.
 
 ```
-@article{guo2024mambair,
-  title={MambaIR: A Simple Baseline for Image Restoration with State-Space Model},
-  author={Guo, Hang and Li, Jinmin and Dai, Tao and Ouyang, Zhihao and Ren, Xudong and Xia, Shu-Tao},
-  journal={arXiv preprint arXiv:2402.15648},
-  year={2024}
+@inproceedings{guo2024mambair,
+    title={MambaIR: A Simple Baseline for Image Restoration with State-Space Model},
+    author={Guo, Hang and Li, Jinmin and Dai, Tao and Ouyang, Zhihao and Ren, Xudong and Xia, Shu-Tao},
+    booktitle={ECCV},
+    year={2024}
 }
 ```
 
