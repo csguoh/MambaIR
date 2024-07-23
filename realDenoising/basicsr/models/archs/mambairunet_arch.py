@@ -486,7 +486,7 @@ class MambaIRUNet(nn.Module):
                 norm_layer=nn.LayerNorm,
                 attn_drop_rate=0,
                 expand=self.mlp_ratio,
-                d_state=base_d_state,
+                d_state=base_d_state* 2 ** 2,
             )
             for i in range(num_blocks[0])])
 
@@ -498,7 +498,7 @@ class MambaIRUNet(nn.Module):
                 norm_layer=nn.LayerNorm,
                 attn_drop_rate=0,
                 expand=self.mlp_ratio,
-                d_state=int(base_d_state * 2 ** 1),
+                d_state=int(base_d_state * 2 ** 2),
             )
             for i in range(num_blocks[1])])
 
@@ -522,7 +522,7 @@ class MambaIRUNet(nn.Module):
                 norm_layer=nn.LayerNorm,
                 attn_drop_rate=0,
                 expand=self.mlp_ratio,
-                d_state=int(base_d_state * 2 ** 3),
+                d_state=int(base_d_state / 2 * 2 ** 3),
             )
             for i in range(num_blocks[3])])
 
@@ -548,7 +548,7 @@ class MambaIRUNet(nn.Module):
                 norm_layer=nn.LayerNorm,
                 attn_drop_rate=0,
                 expand=self.mlp_ratio,
-                d_state=int(base_d_state * 2 ** 1),
+                d_state=int(base_d_state * 2 ** 2),
             )
             for i in range(num_blocks[1])])
 
@@ -561,7 +561,7 @@ class MambaIRUNet(nn.Module):
                 norm_layer=nn.LayerNorm,
                 attn_drop_rate=0,
                 expand=self.mlp_ratio,
-                d_state=int(base_d_state * 2 ** 1),
+                d_state=int(base_d_state * 2 ** 2),
             )
             for i in range(num_blocks[0])])
 
@@ -572,7 +572,7 @@ class MambaIRUNet(nn.Module):
                 norm_layer=nn.LayerNorm,
                 attn_drop_rate=0,
                 expand=self.mlp_ratio,
-                d_state=int(base_d_state * 2 ** 1),
+                d_state=int(base_d_state * 2 ** 2),
             )
             for i in range(num_refinement_blocks)])
 

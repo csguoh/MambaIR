@@ -56,7 +56,7 @@ network_g:
   dim: 48
   num_blocks: [4, 6, 6, 8]
   num_refinement_blocks: 4
-  mlp_ratio: 2
+  mlp_ratio: 1.5
   bias: False
   dual_pixel_task: False
 

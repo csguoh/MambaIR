@@ -32,10 +32,7 @@ opt_str = r"""
   dim: 48
   num_blocks: [4, 6, 6, 8]
   num_refinement_blocks: 4
-  heads: [1, 2, 4, 8]
-  window_size: [8, 8, 8, 8]
-  mlp_ratio: 4
-  interval: [32, 16, 8, 4]
+  mlp_ratio: 1.5
   bias: False
   dual_pixel_task: False
 """
@@ -73,7 +70,7 @@ bb = info['boundingboxes']
 # Process data
 with torch.no_grad():
     for i in tqdm(range(50)):
-        Idenoised = np.zeros((20,), dtype=np.object)
+        Idenoised = np.zeros((20,), dtype=object)
         filename = '%04d.mat'%(i+1)
         filepath = os.path.join(args.input_dir, 'images_srgb', filename)
         img = h5py.File(filepath, 'r')
