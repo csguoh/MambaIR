@@ -64,7 +64,7 @@
 - **2024-2-27:** This repo is released.
 - **2024-3-01:** Pretrained weights for SR and realDN is available. :tada:
 - **2024-3-08:** The code for ERF visualization and model complexity analysis can be found at `./analysis/` 😄
-- **2024-3-19:** We have updated the code for MambaIR-light. Training with only DIV2K, it can achieve better performance (outperform SRFormer by up to **0.2dB**)
+- **2024-3-19:** We have updated the code for MambaIR-light. 
 - **2024-3-19:** **The FIRST Mamba-based Real-world SR Model** is now available! Enjoy yourself 😊.
 - **2024-05-24**:🔈🔈🔈We have released a new repository to collect recent works of **Mamba in low-level-vision**, please see [here](https://github.com/csguoh/Awesome-Mamba-in-Low-Level-Vision) if you are instersted ;D
 - **2024-06-10**: We have released the training and testing config files for **Guassian Color Image Denosing**, the pre-trained weights are coming soon 👏
@@ -106,8 +106,8 @@
 | MambaIR_guassian15 | Guassian Denosing        | Urban100    | 35.17    | -      | [link](https://drive.google.com/file/d/1w5Y502iKSkqhP-OpleppPmk6PAnvWPdr/view?usp=sharing)      | [link](https://drive.google.com/file/d/1Gv3M0IVAp8FrxgOC0LyPuwFaUz_05OVa/view?usp=sharing)     |
 | MambaIR_guassian25 | Guassian Denosing      | Urban100    | 32.99     | -      | [link]()      | [link](https://drive.google.com/file/d/1qSPy6B7Jvi7PDHM1fl8Q88kn7ckwtusK/view?usp=sharing)     |
 | MambaIR_guassian50 | Guassian Denosing       | Urban100    | 30.07     | -      | [link]()      | [link](https://drive.google.com/file/d/1O2o9xPruX8MtUL4qmuxV4Vfsef8L_jLM/view?usp=sharing)     |
-| MambaIR_JEPG10 | JPEG CAR        | Classic5    | 30.27   |   0.8256    | [link]()      | [link]()     |
-| MambaIR_JPEG30 | JPEG CAR      | Classic5   | 33.74  | 0.8965      | [link]()      | [link]()     |
+| MambaIR_JEPG10 | JPEG CAR        | Classic5    | 30.27   |   0.8256    | [link](https://drive.google.com/file/d/1kncutEIAq9MvD8w6If6VZD7hkRkRcXWr/view?usp=sharing)      | [link](https://drive.google.com/file/d/1iGJe6r-H2I0uhKFMi7DQ2bmBP_dWHoV9/view?usp=sharing)     |
+| MambaIR_JPEG30 | JPEG CAR      | Classic5   | 33.74  | 0.8965      | [link](https://drive.google.com/file/d/1hIIJQR59XmizMapxLOWtihhF3R7prYu3/view?usp=sharing)      | [link](https://drive.google.com/file/d/1Z8XSj92bwPlPgUcj0eNt6KQ5HP3Rv0dl/view?usp=sharing)     |
 | MambaIR_JPEG40 | JPEG CAR       | Classic5    | 34.53  | 0.9084    | [link](https://drive.google.com/file/d/1XbuIsLuCtwV78cVMYLuWXm-hNQDsbn6M/view?usp=sharing)      | [link](https://drive.google.com/file/d/1B99jXE_S9c_S0xefGnZm9WZP3dgYy4bR/view?usp=sharing)     |
 
 
