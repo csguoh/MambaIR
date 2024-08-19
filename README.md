@@ -72,6 +72,7 @@
 - **2024-07-01**: :fire: :fire: :fire: Congratulations! Our MambaIR has been accepted by **ECCV 2024**！
 - **2024-07-04**: :kissing_heart: We have released the training and testing config files for JPEG compression artifact reduction tasks.
 - **2024-07-04**: The pretrained weight for **Guassian Color Image Denosing** as well as **JPEG Compression Artifact Reduction** are now availbale [here](#model_summary). The performace of these models is futher improved than the reported one in the paper. And we will update the Arxiv version in the future. Enjoy these new models! :yum:
+- **2024-08-19:** The previous #params&MACs calculation for Mamba model using the `thop` library has a bug, which was also discussed in [#issue44](https://github.com/csguoh/MambaIR/issues/44). We have updated the new accurate calculation code which uses `fvcore` and additionally registers the previous missing parameters. You can use this new code in `./analysis/flops_param_fvcore.py`for complexity analysis. Note that the model complexity obtained from this code is lager than the reported one. We will release a new comparable MambaIR-light model soon, stay tuned！
 
 
 
@@ -89,7 +90,7 @@
 - [x] Add Download Link for Visual Results on Common Benckmarks
 - [x] JPEG Compression Artifact Redection
 - [ ] Futher Improvement...
- 
+
 
 ## <a name="model_summary"></a> :page_with_curl: Model Summary
 
@@ -231,10 +232,10 @@ python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr
 python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_SR_x3.yml --launcher pytorch
 python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_SR_x4.yml --launcher pytorch
 
-# Lightweight SR task, cropped input=64×64, 8 GPUs, batch size=8 per GPU
-python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x2.yml --launcher pytorch
-python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x3.yml --launcher pytorch
-python -m torch.distributed.launch --nproc_per_node=8 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x4.yml --launcher pytorch
+# Lightweight SR task, cropped input=64×64, 2 GPUs, batch size=16 per GPU
+python -m torch.distributed.launch --nproc_per_node=2 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x2.yml --launcher pytorch
+python -m torch.distributed.launch --nproc_per_node=2 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x3.yml --launcher pytorch
+python -m torch.distributed.launch --nproc_per_node=2 --master_port=1234 basicsr/train.py -opt options/train/train_MambaIR_lightSR_x4.yml --launcher pytorch
 ```
 
 3. Run the script then you can find the generated experimental logs in the folder experiments.

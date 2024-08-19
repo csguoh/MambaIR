@@ -36,7 +36,8 @@ class ChannelAttention(nn.Module):
 
 
 class CAB(nn.Module):
-    def __init__(self, num_feat, is_light_sr= False, compress_ratio=3,squeeze_factor=30):
+    # compress_ratio=6 for light SR and compress_ratio=3 for classic SR
+    def __init__(self, num_feat, is_light_sr= False, compress_ratio=6,squeeze_factor=30):
         super(CAB, self).__init__()
         self.cab = nn.Sequential(
             nn.Conv2d(num_feat, num_feat // compress_ratio, 3, 1, 1),
@@ -688,3 +689,19 @@ def buildMambaIR(upscale=2):
                    upsampler='pixelshuffle',
                    resi_connection='1conv')
 
+
+def buildMambaIR_light(upscale=2):
+    return MambaIR(img_size=64,
+                   patch_size=1,
+                   in_chans=3,
+                   embed_dim=60,
+                   depths=(6, 6, 6, 6),
+                   mlp_ratio=1.5,
+                   drop_rate=0.,
+                   norm_layer=nn.LayerNorm,
+                   patch_norm=True,
+                   use_checkpoint=False,
+                   upscale=upscale,
+                   img_range=1.,
+                   upsampler='pixelshuffledirect',
+                   resi_connection='1conv')
