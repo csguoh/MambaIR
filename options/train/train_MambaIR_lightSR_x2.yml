@@ -46,10 +46,10 @@ network_g:
   in_chans: 3
   img_size: 64
   img_range: 1.
-  d_state: 16
+  d_state: 10
   depths: [6, 6, 6, 6]
   embed_dim: 60
-  mlp_ratio: 1.5
+  mlp_ratio: 1.2
   upsampler: 'pixelshuffledirect'
   resi_connection: '1conv'
 

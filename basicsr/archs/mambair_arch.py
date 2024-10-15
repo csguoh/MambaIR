@@ -40,14 +40,23 @@ class ChannelAttention(nn.Module):
 class CAB(nn.Module):
     def __init__(self, num_feat, is_light_sr= False, compress_ratio=3,squeeze_factor=30):
         super(CAB, self).__init__()
-        if is_light_sr: # a larger compression ratio is used for light-SR
-            compress_ratio = 6
-        self.cab = nn.Sequential(
-            nn.Conv2d(num_feat, num_feat // compress_ratio, 3, 1, 1),
-            nn.GELU(),
-            nn.Conv2d(num_feat // compress_ratio, num_feat, 3, 1, 1),
-            ChannelAttention(num_feat, squeeze_factor)
-        )
+        if is_light_sr: # we use dilated-conv & DWConv for lightSR for a large ERF
+            compress_ratio = 2 
+            self.cab = nn.Sequential(
+                nn.Conv2d(num_feat, num_feat // compress_ratio, 1, 1, 0),
+                nn.Conv2d(num_feat//compress_ratio, num_feat // compress_ratio, 3, 1, 1,groups=num_feat//compress_ratio),
+                nn.GELU(),
+                nn.Conv2d(num_feat // compress_ratio, num_feat, 1, 1, 0),
+                nn.Conv2d(num_feat, num_feat, 3,1,padding=2,groups=num_feat,dilation=2),
+                ChannelAttention(num_feat, squeeze_factor)
+            )
+        else:
+            self.cab = nn.Sequential(
+                nn.Conv2d(num_feat, num_feat // compress_ratio, 3, 1, 1),
+                nn.GELU(),
+                nn.Conv2d(num_feat // compress_ratio, num_feat, 3, 1, 1),
+                ChannelAttention(num_feat, squeeze_factor)
+            )
 
     def forward(self, x):
         return self.cab(x)
