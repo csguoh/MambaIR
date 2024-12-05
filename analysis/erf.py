@@ -1,4 +1,4 @@
-from model_zoo.mambaIR import buildMambaIR
+from model_zoo.mambair import buildMambaIR
 import os
 import time
 from functools import partial
@@ -272,4 +272,3 @@ if __name__ == '__main__':
     save_path = f"./tmp/{time.time()}/erf.npy"
     grad_map = visualize_erf(init_model, save_path=save_path)
     analyze_erf(source=grad_map, dest=f"{showpath}/erf.png")
-

@@ -4,7 +4,7 @@ from thop import clever_format
 from model_zoo.swinIR import buildSwinIR, buildSwinIR_light
 from model_zoo.rcan import buildRCAN
 from model_zoo.edsr import buildEDSR
-from model_zoo.mambaIR import buildMambaIR, buildMambaIR_light
+from model_zoo.mambair import buildMambaIR, buildMambaIR_light
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

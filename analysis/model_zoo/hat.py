@@ -985,8 +985,6 @@ class HAT(nn.Module):
 
 
     def forward(self,x):
-        # 模型内部已经写好了针对大的图像输入的对应处理，只要时LQ和HQ的尺寸是满足裁剪后的整数倍即可
-        scale = 2
         _, _, h_old, w_old = x.size()
         window_size = 16
         h_pad = (h_old // window_size + 1) * window_size - h_old
@@ -995,9 +993,12 @@ class HAT(nn.Module):
         x = torch.cat([x, torch.flip(x, [3])], 3)[:, :, :, :w_old + w_pad]
         #with torch.no_grad():
         out = self.forward_train(x)
-        out = out[..., :h_old * scale, : w_old * scale]
+        out = out[..., :h_old * self.upscale, : w_old * self.upscale]
 
         return out
 
 
 
+
+def buildHAT(upscale=2):
+    return HAT(upscale=upscale)

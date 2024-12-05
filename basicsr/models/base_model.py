@@ -299,8 +299,10 @@ class BaseModel():
             if k.startswith('module.'):
                 load_net[k[7:]] = v
                 load_net.pop(k)
+
         self._print_different_keys_loading(net, load_net, strict)
         net.load_state_dict(load_net, strict=strict)
+
 
     @master_only
     def save_training_state(self, epoch, current_iter):

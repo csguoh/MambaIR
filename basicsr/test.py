@@ -1,9 +1,11 @@
 import logging
 import torch
+import os
 from os import path as osp
 import sys
-# for some possible IMPORT ERROR
-# sys.path.append('/data1/guohang/MambaIR-main')
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.abspath(os.path.join(current_dir, '..'))
+sys.path.append(parent_dir)
 from basicsr.data import build_dataloader, build_dataset
 from basicsr.models import build_model
 from basicsr.utils import get_root_logger, get_time_str, make_exp_dirs

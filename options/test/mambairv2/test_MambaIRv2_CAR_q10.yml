@@ -1,0 +1,66 @@
+name: test_MambaIRv2_CAR_q10
+model_type: MambaIRv2Model
+scale: 1
+num_gpu: 1
+manual_seed: 0
+
+datasets:
+  test_1:
+    task: CAR
+    name: Classic5
+    type: PairedImageDataset
+    dataroot_gt: /data2/guohang/dataset/CAR/classic5/Classic5_HQ
+    dataroot_lq: /data2/guohang/dataset/CAR/classic5/Classic5_LQ/10
+    filename_tmpl: '{}'
+    io_backend:
+      type: disk
+
+  test_2:
+    task: CAR
+    name: LIVE1
+    type: PairedImageDataset
+    dataroot_gt: /data2/guohang/dataset/CAR/LIVE1/LIVE1_HQ
+    dataroot_lq: /data2/guohang/dataset/CAR/LIVE1/LIVE1_LQ/10
+    filename_tmpl: '{}'
+    io_backend:
+      type: disk
+
+      
+# network structures
+network_g:
+  type: MambaIRv2
+  upscale: 1
+  in_chans: 1
+  img_size: 126
+  embed_dim: 174
+  d_state: 16
+  depths: [6, 6, 6, 6, 6, 6]
+  num_heads: [6, 6, 6, 6, 6, 6]
+  window_size: 16
+  inner_rank: 64
+  num_tokens: 128
+  convffn_kernel_size: 5
+  mlp_ratio: 2.0
+
+# path
+path:
+  pretrain_network_g: /data2/guohang/pretrained/mambairv2/mambairv2_jpeg_q10.pth
+  strict_load_g: true
+
+# validation settings
+val:
+  save_img: false
+  suffix: ~  # add suffix to saved images, if None, use exp name
+  selfensemble_testing: false
+  patchwise_testing: false
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: true
+    ssim:
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: true
+

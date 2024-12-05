@@ -1,0 +1,90 @@
+name: test_MambaIRv2_ColorDN_level15
+model_type: MambaIRv2Model
+scale: 1
+num_gpu: 1
+manual_seed: 0
+
+datasets:
+  test_1:
+    task: denoising_color
+    name: CBSD68
+    type: PairedImageDataset
+    dataroot_gt: /data2/guohang/dataset/ColorDN/CBSD68HQ
+    dataroot_lq: /data2/guohang/dataset/ColorDN/CBSD68HQ
+    filename_tmpl: '{}'
+    noise: 15 # 15/25/50
+    io_backend:
+      type: disk
+  
+  test_2:
+    task: denoising_color
+    name: Kodak24
+    type: PairedImageDataset
+    dataroot_gt: /data2/guohang/dataset/ColorDN/Kodak24HQ
+    dataroot_lq: /data2/guohang/dataset/ColorDN/Kodak24HQ
+    filename_tmpl: '{}'
+    noise: 15 # 15/25/50
+    io_backend:
+      type: disk
+  
+  test_3:
+    task: denoising_color
+    name: McMaster
+    type: PairedImageDataset
+    dataroot_gt: /data2/guohang/dataset/ColorDN/McMasterHQ
+    dataroot_lq: /data2/guohang/dataset/ColorDN/McMasterHQ
+    filename_tmpl: '{}'
+    noise: 15 # 15/25/50
+    io_backend:
+      type: disk
+  
+  test_4:
+    task: denoising_color
+    name: Urban100
+    type: PairedImageDataset
+    dataroot_gt: /data2/guohang/dataset/ColorDN/Urban100HQ
+    dataroot_lq: /data2/guohang/dataset/ColorDN/Urban100HQ
+    filename_tmpl: '{}'
+    noise: 15 # 15/25/50
+    io_backend:
+      type: disk
+
+# network structures
+network_g:
+  type: MambaIRv2
+  upscale: 1
+  in_chans: 3
+  img_size: 128
+  img_range: 1.
+  embed_dim: 174
+  d_state: 16
+  depths: [6, 6, 6,6,6,6]
+  num_heads: [6,6,6,6,6,6]
+  window_size: 16
+  inner_rank: 64
+  num_tokens: 128
+  convffn_kernel_size: 5
+  mlp_ratio: 2.
+
+
+
+# path
+path:
+  pretrain_network_g: /data2/guohang/pretrained/mambairv2/mambairv2_ColorDN_15.pth
+  strict_load_g: true
+# validation settings
+val:
+  save_img: false
+  suffix: ~  # add suffix to saved images, if None, use exp name
+  selfensemble_testing: false
+  patchwise_testing: false
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: false
+    ssim:
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: false

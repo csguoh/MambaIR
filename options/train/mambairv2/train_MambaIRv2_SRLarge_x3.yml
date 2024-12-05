@@ -1,0 +1,120 @@
+# general settings for image SR training
+name: MambaIRv2_SR_x3
+model_type: MambaIRv2Model
+scale: 3
+num_gpu: 8
+manual_seed: 10
+
+# dataset and data loader settings
+datasets:
+  train:
+    task: SR
+    name: DF2K
+    type: PairedImageDataset
+    dataroot_gt:
+      - /data1/guohang/dataset/DF2K/DF2K/HR
+    dataroot_lq:
+      - /data1/guohang/dataset/DF2K/DF2K/LR_bicubic/X3
+    filename_tmpl: '{}x3'
+    io_backend:
+      type: disk
+
+    gt_size: 192
+    use_hflip: true
+    use_rot: true
+
+    # data loader
+    use_shuffle: true
+    num_worker_per_gpu: 32
+    batch_size_per_gpu: 4
+    dataset_enlarge_ratio: 100
+    prefetch_mode: ~
+
+  val:
+    name: Set14
+    type: PairedImageDataset
+    dataroot_gt: /data1/guohang/dataset/SR/Set14/HR
+    dataroot_lq: /data1/guohang/dataset/SR/Set14/LR_bicubic/X3
+    filename_tmpl: '{}x3'
+    io_backend:
+      type: disk
+
+
+
+# network structures
+network_g:
+  type: MambaIRv2
+  upscale: 3
+  in_chans: 3
+  img_size: 64
+  img_range: 1.
+  embed_dim: 174
+  d_state: 16
+  depths: [6, 6, 6, 6, 6, 6, 6, 6, 6]
+  num_heads: [6, 6, 6, 6, 6, 6, 6, 6, 6]
+  window_size: 16
+  inner_rank: 64
+  num_tokens: 128
+  convffn_kernel_size: 5
+  mlp_ratio: 2.0
+  upsampler: 'pixelshuffle'
+  resi_connection: '1conv'
+
+
+
+path:
+  # for classic SRx3, we use the x2 Model to initialize and halve the training iteration and lr for fast training
+  pretrain_network_g: /data2/guohang/pretrained/mambairv2/mambairv2_classicSR_Large_x2.pth
+  strict_load_g: false
+  resume_state: ~
+
+# training settings
+train:
+  optim_g:
+    type: Adam
+    # lr: !!float 2e-4
+    lr: !!float 1e-4
+    weight_decay: 0
+    betas: [0.9, 0.99]
+
+  scheduler:
+    type: MultiStepLR
+    # milestones: [ 250000, 400000, 450000, 475000 ]
+    milestones: [ 125000, 200000, 225000, 237500 ]
+    gamma: 0.5
+
+  # total_iter: 500000
+  total_iter: 250000
+  warmup_iter: -1  # no warm up
+
+  # losses
+  pixel_opt:
+    type: L1Loss
+    loss_weight: 1.0
+    reduction: mean
+# validation settings
+val:
+  val_freq: !!float 5e3
+  save_img: true
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 3
+      test_y_channel: true
+
+
+
+# logging settings
+logger:
+  print_freq: 200
+  save_checkpoint_freq: !!float 5e3
+  use_tb_logger: true
+  wandb:
+    project: ~
+    resume_id: ~
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500

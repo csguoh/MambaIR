@@ -1,0 +1,94 @@
+# general settings
+name: test_MambaIRv2_SRSmall_x4
+model_type: MambaIRv2Model
+scale: 4
+num_gpu: 8
+manual_seed: 10
+
+datasets:
+  test_1:  # the 1st test dataset
+    name: Set5
+    type: PairedImageDataset
+    dataroot_gt: /data2/guohang/dataset/ARTSR/Set5/HR 
+    dataroot_lq: /data2/guohang/dataset/ARTSR/Set5/LR_bicubic/X4 
+    filename_tmpl: '{}x4'
+    io_backend:
+      type: disk
+
+  test_2:  # the 2nd test dataset
+    name: Set14
+    type: PairedImageDataset
+    dataroot_gt: /data2/guohang/dataset/ARTSR/Set14/HR
+    dataroot_lq: /data2/guohang/dataset/ARTSR/Set14/LR_bicubic/X4 
+    filename_tmpl: '{}x4'
+    io_backend:
+      type: disk
+#
+  test_3:  # the 3rd test dataset
+    name: B100
+    type: PairedImageDataset
+    dataroot_gt: /data2/guohang/dataset/ARTSR/B100/HR
+    dataroot_lq: /data2/guohang/dataset/ARTSR/B100/LR_bicubic/X4 
+    filename_tmpl: '{}x4'
+    io_backend:
+      type: disk
+
+  test_4:  # the 4th test dataset
+    name: Urban100
+    type: PairedImageDataset
+    dataroot_gt: /data2/guohang/dataset/ARTSR/Urban100/HR 
+    dataroot_lq: /data2/guohang/dataset/ARTSR/Urban100/LR_bicubic/X4 
+    filename_tmpl: '{}x4'
+    io_backend:
+      type: disk
+
+  test_5:  # the 5th test dataset
+    name: Manga109
+    type: PairedImageDataset
+    dataroot_gt: /data2/guohang/dataset/ARTSR/Manga109/HR
+    dataroot_lq: /data2/guohang/dataset/ARTSR/Manga109/LR_bicubic/X4
+    filename_tmpl: '{}_LRBI_x4'
+    io_backend:
+      type: disk
+
+
+
+# network structures
+network_g:
+  type: MambaIRv2
+  upscale: 4
+  in_chans: 3
+  img_size: 64
+  img_range: 1.
+  embed_dim: 132
+  d_state: 16
+  depths: [4, 4, 4, 4, 4, 4]
+  num_heads: [4, 4, 4, 4, 4, 4]
+  window_size: 16
+  inner_rank: 64
+  num_tokens: 128
+  convffn_kernel_size: 5
+  mlp_ratio: 2.0
+  upsampler: 'pixelshuffle'
+  resi_connection: '1conv'
+
+
+# path
+path:
+  pretrain_network_g: /data2/guohang/pretrained/mambairv2/mambairv2_classicSR_Small_x4.pth
+  strict_load_g: true
+
+# validation settings
+val:
+  save_img: false
+  suffix: ~  # add suffix to saved images, if None, use exp name
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 4
+      test_y_channel: true
+    ssim:
+      type: calculate_ssim
+      crop_border: 4
+      test_y_channel: true
