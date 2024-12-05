@@ -123,16 +123,16 @@ The updated MambaIRv2 is totally compatible with the previous MambaIR. We also k
 | MambaIR_JPEG30 | JPEG CAR      | Classic5   | 33.74  | 0.8965      | [link](https://drive.google.com/file/d/1hIIJQR59XmizMapxLOWtihhF3R7prYu3/view?usp=sharing)      | [link](https://drive.google.com/file/d/1Z8XSj92bwPlPgUcj0eNt6KQ5HP3Rv0dl/view?usp=sharing)     |
 | MambaIR_JPEG40 | JPEG CAR       | Classic5    | 34.53  | 0.9084    | [link](https://drive.google.com/file/d/1XbuIsLuCtwV78cVMYLuWXm-hNQDsbn6M/view?usp=sharing)      | [link](https://drive.google.com/file/d/1B99jXE_S9c_S0xefGnZm9WZP3dgYy4bR/view?usp=sharing)     |
 | ---------------  | ----------    | -------    |  ---  | ---    | ---       | ---   |
-| MambaIRv2_light2 | lightSR x2       | Urban100   |  33.26 | 0.9378    | [link]()      | [link]()     |
-| MambaIRv2_light3 | lightSR x3       | Urban100   |  29.01 | 0.8689    | [link]()      | [link]()     |
-| MambaIRv2_light4 | lightSR x4       | Urban100   | 26.82 | 0.8079  | [link]()      | [link]()     |
-| MambaIRv2_SR2 | classicSR x2       | Urban100   |  34.49 | 0.9468    | [link]()      | [link]()     |
-| MambaIRv2_SR3 | classicSR x3      | Urban100   | 30.28 | 0.8905    | [link]()      | [link]()     |
-| MambaIRv2_SR4 | classicSR x4     | Urban100   |  27.89 | 0.8344    | [link]()      | [link]()     |
-| MambaIRv2_guassian15 | Guassian Denoising | Urban100   | 35.42  | -    | [link]()      | [link]()     |
-| MambaIRv2_JPEG10 | JPEG CAR q10 | Classic5   | 30.37 | 0.8269   | [link]()      | [link]()     |
-| MambaIRv2_JPEG30 | JPEG CAR  q30| Classic5   |33.81 | 0.8970    | [link]()      | [link]()     |
-| MambaIRv2_JPEG40 | JPEG CAR  q40| Classic5   |  34.64 | 0.9093   | [link]()      | [link]()     |
+| MambaIRv2_light2 | lightSR x2       | Urban100   |  33.26 | 0.9378    | [link](https://github.com/csguoh/MambaIR/releases/tag/v1.0)      | [link]()     |
+| MambaIRv2_light3 | lightSR x3       | Urban100   |  29.01 | 0.8689    | [link](https://github.com/csguoh/MambaIR/releases/tag/v1.0)      | [link]()     |
+| MambaIRv2_light4 | lightSR x4       | Urban100   | 26.82 | 0.8079  | [link](https://github.com/csguoh/MambaIR/releases/tag/v1.0)      | [link]()     |
+| MambaIRv2_SR2 | classicSR x2       | Urban100   |  34.49 | 0.9468    | [link](https://github.com/csguoh/MambaIR/releases/tag/v1.0)      | [link]()     |
+| MambaIRv2_SR3 | classicSR x3      | Urban100   | 30.28 | 0.8905    | [link](https://github.com/csguoh/MambaIR/releases/tag/v1.0)      | [link]()     |
+| MambaIRv2_SR4 | classicSR x4     | Urban100   |  27.89 | 0.8344    | [link](https://github.com/csguoh/MambaIR/releases/tag/v1.0)      | [link]()     |
+| MambaIRv2_guassian15 | Guassian Denoising | Urban100   | 35.42  | -    | [link](https://github.com/csguoh/MambaIR/releases/tag/v1.0)      | [link]()     |
+| MambaIRv2_JPEG10 | JPEG CAR q10 | Classic5   | 30.37 | 0.8269   | [link](https://github.com/csguoh/MambaIR/releases/tag/v1.0)      | [link]()     |
+| MambaIRv2_JPEG30 | JPEG CAR  q30| Classic5   |33.81 | 0.8970    | [link](https://github.com/csguoh/MambaIR/releases/tag/v1.0)      | [link]()     |
+| MambaIRv2_JPEG40 | JPEG CAR  q40| Classic5   |  34.64 | 0.9093   | [link](https://github.com/csguoh/MambaIR/releases/tag/v1.0)      | [link]()     |
 
 
 ## <a name="results"></a> 🥇 Results with MambaIRv2
