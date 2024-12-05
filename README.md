@@ -9,6 +9,7 @@ The updated MambaIRv2 is totally compatible with the previous MambaIR. We also k
 
 ### Check our paper collection of [Awesome Mamba in Low-Level Vision](https://github.com/csguoh/Awesome-Mamba-in-Low-Level-Vision) :hugs:.
 
+## [ECCV24] MambaIR: A Simple Baseline for Image Restoration with State-Space Model
 
 ## MambaIRv2: Attentive State Space Restoration
 #### [[Paper](https://arxiv.org/pdf/2411.15269)] [[Zhihu(知乎)](https://zhuanlan.zhihu.com/p/9375585949)]
