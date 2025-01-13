@@ -563,7 +563,7 @@ class BasicBlock(nn.Module):
                  mlp_ratio=4.,
                  qkv_bias=True,
                  norm_layer=nn.LayerNorm,
-                 downsample=None,):
+                 downsample=None,use_checkpoint=False):
 
         super().__init__()
         self.dim = dim
