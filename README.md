@@ -12,7 +12,14 @@ The updated MambaIRv2 is totally compatible with the previous MambaIR. We also k
 ## [ECCV24] MambaIR: A Simple Baseline for Image Restoration with State-Space Model
 
 ## MambaIRv2: Attentive State Space Restoration
+
+
+[<a href="https://colab.research.google.com/drive/1BjTTPqnUKAa_Esh8ZD77TWiS7JrxQ8TR?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" width="130" alt="google colab logo"></a>](https://colab.research.google.com/drive/1BjTTPqnUKAa_Esh8ZD77TWiS7JrxQ8TR?usp=sharing)
+
 #### [[Paper](https://arxiv.org/pdf/2411.15269)] [[Zhihu(知乎)](https://zhuanlan.zhihu.com/p/9375585949)]
+
+
+
 
 [Hang Guo](https://github.com/csguoh)\*, [Yong Guo](https://www.guoyongcs.com/)\* [Yaohua Zha](https://scholar.google.com.hk/citations?user=-zUO4_QAAAAJ&hl=zh-CN&oi=sra), [Yulun Zhang](https://yulunzhang.com/) [Wenbo Li](https://fenglinglwb.github.io/), [Tao Dai](https://csse.szu.edu.cn/pages/user/index?id=1204), [Shu-Tao Xia](https://www.sigs.tsinghua.edu.cn/xst/list.htm), [Yawei Li](https://yaweili.bitbucket.io/)
 
@@ -84,7 +91,7 @@ The updated MambaIRv2 is totally compatible with the previous MambaIR. We also k
 - **2024-10-15**: We have updated a new arXiv version of our MambaIR paper, in which we have fixed the results on lightSR tasks.
 - **2024-10-15**😍😍😍A brand new Mamba-base image restoration backbone MambaIRv2 is just around the corner, with significant performance and efficiency improvements. We will release the new paper and code soon~
 - **2024-12-04**: 🤗The code of **MambaIRv2 is now released**, with significant gains on both performance and efficiency!
-
+- **2025-01-13**: 👀 We have created an **online jupyter notebook demo** for fast inference to play with the MambaIR model. Check our online inference demo here 👉 [<a href="https://colab.research.google.com/drive/1BjTTPqnUKAa_Esh8ZD77TWiS7JrxQ8TR?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="google colab logo"></a>](https://colab.research.google.com/drive/1BjTTPqnUKAa_Esh8ZD77TWiS7JrxQ8TR?usp=sharing)
 
 
 
@@ -101,6 +108,7 @@ The updated MambaIRv2 is totally compatible with the previous MambaIR. We also k
 - [x] JPEG Compression Artifact Reduction
 - [x] Release MambaIRv2 Code
 - [x] Release pre-trained MambaIRv2 weights
+- [x] Online jupyter notebobk demo
 - [ ] Release U-shaped MambaIRv2 for more restoration tasks
 
 
