@@ -92,7 +92,7 @@ The updated MambaIRv2 is totally compatible with the previous MambaIR. We also k
 - **2024-10-15**😍😍😍A brand new Mamba-base image restoration backbone MambaIRv2 is just around the corner, with significant performance and efficiency improvements. We will release the new paper and code soon~
 - **2024-12-04**: 🤗The code of **MambaIRv2 is now released**, with significant gains on both performance and efficiency!
 - **2025-01-13**: 👀 We have created an **online jupyter notebook demo** for fast inference to play with the MambaIR model. Check our online inference demo here 👉 [<a href="https://colab.research.google.com/drive/1BjTTPqnUKAa_Esh8ZD77TWiS7JrxQ8TR?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="google colab logo"></a>](https://colab.research.google.com/drive/1BjTTPqnUKAa_Esh8ZD77TWiS7JrxQ8TR?usp=sharing)
-
+- **2025-02-27**: 🎉🎉🎉 Congrats! Our MambaIRv2 is accepted by **CVPR2025**!
 
 
 ## <a name="todo"></a> ☑️ TODO
