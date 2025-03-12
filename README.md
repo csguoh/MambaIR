@@ -11,7 +11,7 @@ The updated MambaIRv2 is totally compatible with the previous MambaIR. We also k
 
 ## [ECCV24] MambaIR: A Simple Baseline for Image Restoration with State-Space Model
 
-## [CVPR2025] MambaIRv2: Attentive State Space Restoration
+## [CVPR25] MambaIRv2: Attentive State Space Restoration
 
 
 [<a href="https://colab.research.google.com/drive/1BjTTPqnUKAa_Esh8ZD77TWiS7JrxQ8TR?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" width="130" alt="google colab logo"></a>](https://colab.research.google.com/drive/1BjTTPqnUKAa_Esh8ZD77TWiS7JrxQ8TR?usp=sharing)
