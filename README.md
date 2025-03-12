@@ -16,6 +16,10 @@ The updated MambaIRv2 is totally compatible with the previous MambaIR. We also k
 
 [<a href="https://colab.research.google.com/drive/1BjTTPqnUKAa_Esh8ZD77TWiS7JrxQ8TR?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" width="130" alt="google colab logo"></a>](https://colab.research.google.com/drive/1BjTTPqnUKAa_Esh8ZD77TWiS7JrxQ8TR?usp=sharing)
 
+[![Huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Weights-MambaIR-yellow)](https://huggingface.co/cguoh/MambaIR)
+
+
+
 #### [[Paper](https://arxiv.org/pdf/2411.15269)] [[Zhihu(知乎)](https://zhuanlan.zhihu.com/p/9375585949)]
 
 
