@@ -118,6 +118,11 @@ The updated MambaIRv2 is totally compatible with the previous MambaIR. We also k
 
 ## <a name="model_summary"></a> :page_with_curl: Model Summary
 
+We also host our MambaIR and MambIRv2 weights on HuggingFace ;D [![Huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20download-here!-yellow)](https://huggingface.co/cguoh/MambaIR)
+
+
+
+
 | Model          | Task                 | Test_dataset | PSNR  | SSIM   | model_weights | log_files |
 |----------------|----------------------|--------------|-------|--------| --------- | -------- |
 | MambaIR_SR2    | Classic SR x2        | Urban100     | 34.15 | 0.9446 | [link](https://drive.google.com/file/d/11Kiy_0hmMyDjMvW7MmbUT6tO9n5JrDeB/view?usp=sharing)      | [link](https://drive.google.com/file/d/1XzBkBPPb5jymKfGQO3yVePVqWxDMuaF1/view?usp=sharing)     |
